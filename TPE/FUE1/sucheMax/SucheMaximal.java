@@ -1,3 +1,4 @@
+package suchemax;
 /**
  * @author Max Jando
  *         Klasse welche ein int-Array ubergeben bekommt und die grote Zahl aus diesem heraussucht und zuruckgibt
