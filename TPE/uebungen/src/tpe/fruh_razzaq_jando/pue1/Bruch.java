@@ -72,9 +72,9 @@ public class Bruch {
     // Methods
     // ================================================================================
 
-	public Bruch kehrwert() {
-		return new Bruch(this.nenner, this.zaehler);
-	}
+    public Bruch kehrwert() {
+        return new Bruch(this.nenner, this.zaehler);
+    }
 
     private Bruch cloneObject() {
         if (this.ganze != 0) {
@@ -96,8 +96,7 @@ public class Bruch {
 
         tmpBruch1.unechterBruch();
         tmpBruch2.unechterBruch();
-        long zaehler = (tmpBruch1.zaehler * tmpBruch2.nenner)
-                + (tmpBruch2.zaehler * tmpBruch1.nenner);
+        long zaehler = tmpBruch1.neuerZaehler(tmpBruch2, '+');
         Bruch ergebnisBruch = new Bruch(zaehler, tmpBruch1.nenner
                 * tmpBruch2.nenner);
         ergebnisBruch.kuerze();
@@ -105,6 +104,18 @@ public class Bruch {
             ergebnisBruch.echterBruch();
         }
         return ergebnisBruch;
+    }
+
+    private long neuerZaehler(Bruch tmpBruch2, char operation) {
+        switch (operation) {
+            case '+':
+                return (this.zaehler * tmpBruch2.nenner)
+                        + (tmpBruch2.zaehler * this.nenner);
+            case '-':
+                return (this.zaehler * tmpBruch2.nenner)
+                        - (tmpBruch2.zaehler * this.nenner);
+        }
+        return 0;
     }
 
     public void unechterBruch() {
