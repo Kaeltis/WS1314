@@ -97,30 +97,6 @@ public class BruchTest {
 	}
 
 	@Test
-	public void testSubtrahiere() {
-		Bruch bruch1a = new Bruch(3, 10);
-		Bruch bruch1b = new Bruch(1, 6);
-		Bruch bruch1exp = new Bruch(2, 15);
-		Bruch bruch1act = bruch1a.subtrahiere(bruch1b);
-
-		assertEquals(bruch1exp.toString(), bruch1act.toString());
-
-		Bruch bruch2a = new Bruch(2, 5);
-		Bruch bruch2b = new Bruch(1, 5);
-		Bruch bruch2exp = new Bruch(1, 5);
-		Bruch bruch2act = bruch2a.subtrahiere(bruch2b);
-
-		assertEquals(bruch2exp.toString(), bruch2act.toString());
-
-		Bruch bruch3a = new Bruch(8, 10);
-		Bruch bruch3b = new Bruch(2, 10);
-		Bruch bruch3exp = new Bruch(3, 5);
-		Bruch bruch3act = bruch3a.subtrahiere(bruch3b);
-
-		assertEquals(bruch3exp.toString(), bruch3act.toString());
-	}
-
-	@Test
 	public void testMultipliziere() {
 		Bruch bruch1a = new Bruch(3, 10);
 		Bruch bruch1b = new Bruch(1, 6);
