@@ -1,5 +1,7 @@
 package tpe.fruh_razzaq_jando.pue1;
 
+import java.math.*;
+
 /**
  * Diese Klasse implementiert einen Bruch
  * 
@@ -63,7 +65,17 @@ public class Bruch {
 	// ================================================================================
 
 	private void kuerze() {
+		long ggt = getGGT(Math.min(zaehler, nenner));
 
+		this.zaehler = this.zaehler / ggt;
+		this.nenner = this.nenner / ggt;
+	}
+
+	private long getGGT(long aktuelleZahl) {
+		if (zaehler % aktuelleZahl == 0 && nenner % aktuelleZahl == 0)
+			return aktuelleZahl;
+		else
+			return getGGT(aktuelleZahl - 1);
 	}
 
 	@Override
