@@ -71,6 +71,10 @@ public class Bruch {
 	// ================================================================================
 	// Methods
 	// ================================================================================
+	
+	public Bruch kehrwert() {
+		return new Bruch(this.nenner, this.zaehler);
+	}
 
 	public Bruch addiere(Bruch zweiterBruch) {
 		boolean echt = false;
