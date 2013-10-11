@@ -1,35 +1,35 @@
+package tpe.fruh_razzaq_jando.pue1;
+
 /**
- * @author TPE_UIB_01
  * Diese Klasse implementiert einen Bruch
+ * 
+ * @author TPE_UIB_01
  */
 public class Bruch {
 
-    private long nenner, zähler, ganzzahlerAnteil;
+	private long nenner, zaehler, ganzzahlerAnteil;
 
-    /* Nenenene*/
+	public long getNenner() {
+		return nenner;
+	}
 
+	public void setNenner(long nenner) {
+		this.nenner = nenner;
+	}
 
-    public long getNenner() {
-        return nenner;
-    }
+	public long getZaehler() {
+		return zaehler;
+	}
 
-    public void setNenner(long nenner) {
-        this.nenner = nenner;
-    }
+	public void setZaehler(long zähler) {
+		this.zaehler = zähler;
+	}
 
-    public long getZähler() {
-        return zähler;
-    }
+	public long getGanzzahlerAnteil() {
+		return ganzzahlerAnteil;
+	}
 
-    public void setZähler(long zähler) {
-        this.zähler = zähler;
-    }
-
-    public long getGanzzahlerAnteil() {
-        return ganzzahlerAnteil;
-    }
-
-    public void setGanzzahlerAnteil(long ganzzahlerAnteil) {
-        this.ganzzahlerAnteil = ganzzahlerAnteil;
-    }
+	public void setGanzzahlerAnteil(long ganzzahlerAnteil) {
+		this.ganzzahlerAnteil = ganzzahlerAnteil;
+	}
 }
