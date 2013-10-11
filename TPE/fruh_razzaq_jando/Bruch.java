@@ -6,6 +6,9 @@ public class Bruch {
 
     private long nenner, zähler, ganzzahlerAnteil;
 
+    /* Nenenene*/
+
+
     public long getNenner() {
         return nenner;
     }
