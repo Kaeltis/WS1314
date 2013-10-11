@@ -7,7 +7,7 @@ package tpe.fruh_razzaq_jando.pue1;
  */
 public class Bruch {
 
-	private long nenner, zaehler, ganzzahlerAnteil;
+	private long nenner, zaehler, ganze;
 
 	public long getNenner() {
 		return nenner;
@@ -25,11 +25,11 @@ public class Bruch {
 		this.zaehler = zaehler;
 	}
 
-	public long getGanzzahlerAnteil() {
-		return ganzzahlerAnteil;
+	public long getGanze() {
+		return ganze;
 	}
 
-	public void setGanzzahlerAnteil(long ganzzahlerAnteil) {
-		this.ganzzahlerAnteil = ganzzahlerAnteil;
+	public void setGanze(long ganze) {
+		this.ganze = ganze;
 	}
 }
