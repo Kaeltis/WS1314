@@ -110,6 +110,8 @@ public class Bruch {
         Bruch tmpBruch1 = this.cloneObject();
         Bruch tmpBruch2 = zweiterBruch.cloneObject();
 
+        /**/
+
         if (tmpBruch1.isEcht() || tmpBruch2.isEcht()) {
             echt = true;
         }
