@@ -72,39 +72,40 @@ public class Bruch {
 	// Methods
 	// ================================================================================
 
-	public Bruch potenziere(long potenz) {
-		boolean warEcht = false;
+    public Bruch potenziere(long potenz) {
+        boolean warEcht = false;
 
-		if (isEcht()) {
-			unechterBruch();
-			warEcht = true;
-		}
+        if (isEcht()) {
+            unechterBruch();
+            warEcht = true;
+        }
 
-		long zaehler = (long) Math.pow(this.zaehler, potenz);
-		long nenner = (long) Math.pow(this.nenner, potenz);
+        long zaehler = (long) Math.pow(this.zaehler, potenz);
+        long nenner = (long) Math.pow(this.nenner, potenz);
 
-		Bruch newBruch = new Bruch(zaehler, nenner);
+        Bruch newBruch = new Bruch(zaehler, nenner);
 
-		if (warEcht)
-			newBruch.echterBruch();
+        if (warEcht)
+            newBruch.echterBruch();
 
-		return newBruch;
-	}
+        return newBruch;
+    }
 
-	public boolean equals(Bruch zweiterBruch) {
-		Bruch tmpBruch1 = this.cloneObject();
-		Bruch tmpBruch2 = zweiterBruch.cloneObject();
-		tmpBruch1.unechterBruch();
-		tmpBruch2.unechterBruch();
+    public boolean equals(Bruch zweiterBruch) {
+        Bruch tmpBruch1 = this.cloneObject();
+        Bruch tmpBruch2 = zweiterBruch.cloneObject();
+        tmpBruch1.unechterBruch();
+        tmpBruch2.unechterBruch();
 
-		if (tmpBruch1.getZaehler() == tmpBruch2.getZaehler()
-				&& tmpBruch1.getNenner() == tmpBruch2.getNenner())
-			return true;
-		else
-			return false;
-	}
+        if (tmpBruch1.getZaehler() == tmpBruch2.getZaehler()
+                && tmpBruch1.getNenner() == tmpBruch2.getNenner())
+            return true;
+        else
+            return false;
+    }
 
-	public boolean isEcht() {
+
+    public boolean isEcht() {
 		return (this.ganze != 0);
 	}
 
@@ -124,32 +125,30 @@ public class Bruch {
 		return rechenOperation(zweiterBruch, '+');
 	}
 
-	public Bruch subtrahiere(Bruch zweiterBruch) {
-		return rechenOperation(zweiterBruch, '-');
-	}
-
 	private Bruch rechenOperation(Bruch zweiterBruch, char operation) {
-		boolean echt = false;
-		Bruch tmpBruch1 = this.cloneObject();
-		Bruch tmpBruch2 = zweiterBruch.cloneObject();
+        boolean echt = false;
+        Bruch tmpBruch1 = this.cloneObject();
+        Bruch tmpBruch2 = zweiterBruch.cloneObject();
 
-		if (tmpBruch1.isEcht() || tmpBruch2.isEcht()) {
-			echt = true;
-		}
-		tmpBruch1.unechterBruch();
-		tmpBruch2.unechterBruch();
-		long zaehler = tmpBruch1.neuerZaehler(operation, tmpBruch2);
-		Bruch ergebnisBruch = new Bruch(zaehler, tmpBruch1.nenner
-				* tmpBruch2.nenner);
-		ergebnisBruch.kuerze();
-		if (echt) {
-			ergebnisBruch.echterBruch();
-		}
-		return ergebnisBruch;
+        /**/
+
+        if (tmpBruch1.isEcht() || tmpBruch2.isEcht()) {
+            echt = true;
+        }
+        tmpBruch1.unechterBruch();
+        tmpBruch2.unechterBruch();
+        long zaehler = tmpBruch1.neuerZaehler(operation, tmpBruch2);
+        Bruch ergebnisBruch = new Bruch(zaehler, tmpBruch1.nenner
+                * tmpBruch2.nenner);
+        ergebnisBruch.kuerze();
+        if (echt) {
+            ergebnisBruch.echterBruch();
+        }
+        return ergebnisBruch;
 	}
 
-	private long neuerZaehler(char operation, Bruch tmpBruch2) {
-		switch (operation) {
+    private long neuerZaehler(char operation, Bruch tmpBruch2) {
+        switch (operation) {
 		case '+':
 			return (this.zaehler * tmpBruch2.nenner)
 					+ (tmpBruch2.zaehler * this.nenner);
@@ -157,10 +156,10 @@ public class Bruch {
 			return (this.zaehler * tmpBruch2.nenner)
 					- (tmpBruch2.zaehler * this.nenner);
 		}
-		return 0;
-	}
+        return 0;
+    }
 
-	public void unechterBruch() {
+    public void unechterBruch() {
 		if (this.ganze != 0) {
 			this.zaehler = (this.ganze * this.nenner) + this.zaehler;
 			this.ganze = 0;
