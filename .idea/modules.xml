@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TPE/FUE2 JUNIT/FUE2 JUNIT.iml" filepath="$PROJECT_DIR$/TPE/FUE2 JUNIT/FUE2 JUNIT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOT/OOT.iml" filepath="$PROJECT_DIR$/OOT/OOT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TPE/TPE.iml" filepath="$PROJECT_DIR$/TPE/TPE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TPE/uebungen/uebungen.iml" filepath="$PROJECT_DIR$/TPE/uebungen/uebungen.iml" />
+    </modules>
+  </component>
+</project>
+

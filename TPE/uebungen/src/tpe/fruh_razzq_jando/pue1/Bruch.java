@@ -1,4 +1,4 @@
-package tpe.fruh_razzaq_jando.pue1;
+package tpe.fruh_razzq_jando.pue1;
 
 /**
  * Diese Klasse implementiert einen Bruch

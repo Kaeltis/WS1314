@@ -1,3 +1,5 @@
+package tpe.fruh_razzq_jando.fue2;
+
 public class Fakultaet {
     /**
      * Berechnet die Fakultat fuer die gegebene Zahl.
