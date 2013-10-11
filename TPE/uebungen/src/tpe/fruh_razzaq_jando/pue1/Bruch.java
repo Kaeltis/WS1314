@@ -19,18 +19,28 @@ public class Bruch {
     // Constructors
     // ================================================================================
 
-    Bruch(long zaehler, long nenner) {
-        this.zaehler = zaehler;
-        this.nenner = nenner;
-        kuerze();
-    }
+	Bruch(long zaehler, long nenner) {
+		if (nenner == 0)
+			throw new RuntimeException(
+					"Bruch(zaehler, nenner) - nenner darf nicht 0 sein!");
+		else {
+			this.zaehler = zaehler;
+			this.nenner = nenner;
+			kuerze();
+		}
+	}
 
-    Bruch(long ganze, long zaehler, long nenner) {
-        this.zaehler = zaehler;
-        this.nenner = nenner;
-        this.ganze = ganze;
-        kuerze();
-    }
+	Bruch(long ganze, long zaehler, long nenner) {
+		if (nenner == 0)
+			throw new RuntimeException(
+					"Bruch(zaehler, nenner, ganze) - nenner darf nicht 0 sein!");
+		else {
+			this.zaehler = zaehler;
+			this.nenner = nenner;
+			this.ganze = ganze;
+			kuerze();
+		}
+	}
 
     // ================================================================================
     // Accessors
@@ -108,6 +118,10 @@ public class Bruch {
             this.zaehler -= this.nenner;
         }
     }
+    
+	public double getDezimalzahl() {
+		return ganze + ((double) zaehler / (double) nenner);
+	}
 
     private void kuerze() {
         long ggt = getGGT(Math.min(zaehler, nenner));
