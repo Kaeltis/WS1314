@@ -72,7 +72,11 @@ public class Bruch {
     // Methods
     // ================================================================================
 
-    private Bruch clonObject() {
+	public Bruch kehrwert() {
+		return new Bruch(this.nenner, this.zaehler);
+	}
+
+    private Bruch cloneObject() {
         if (this.ganze != 0) {
             return new Bruch(this.ganze, this.zaehler, this.nenner);
         } else {
@@ -83,8 +87,8 @@ public class Bruch {
 
     public Bruch addiere(Bruch zweiterBruch) {
         boolean echt = false;
-        Bruch tmpBruch1 = this.clonObject();
-        Bruch tmpBruch2 = zweiterBruch.clonObject();
+        Bruch tmpBruch1 = this.cloneObject();
+        Bruch tmpBruch2 = zweiterBruch.cloneObject();
 
         if (tmpBruch1.ganze != 0 || tmpBruch2.ganze != 0) {
             echt = true;
