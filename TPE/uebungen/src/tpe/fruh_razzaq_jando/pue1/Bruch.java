@@ -1,7 +1,5 @@
 package tpe.fruh_razzaq_jando.pue1;
 
-import java.math.*;
-
 /**
  * Diese Klasse implementiert einen Bruch
  *
