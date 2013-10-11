@@ -21,8 +21,8 @@ public class Bruch {
 		return zaehler;
 	}
 
-	public void setZaehler(long zähler) {
-		this.zaehler = zähler;
+	public void setZaehler(long zaehler) {
+		this.zaehler = zaehler;
 	}
 
 	public long getGanzzahlerAnteil() {
