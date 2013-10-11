@@ -28,7 +28,7 @@ public class Bruch {
 		}
 	}
 
-	Bruch(long zaehler, long nenner, long ganze) {
+	Bruch(long ganze, long zaehler, long nenner) {
 		if (nenner == 0)
 			throw new RuntimeException(
 					"Bruch(zaehler, nenner, ganze) - nenner darf nicht 0 sein!");
