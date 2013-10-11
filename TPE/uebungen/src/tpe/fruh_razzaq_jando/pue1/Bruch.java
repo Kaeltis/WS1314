@@ -1,7 +1,5 @@
 package tpe.fruh_razzaq_jando.pue1;
 
-import java.math.*;
-
 /**
  * Diese Klasse implementiert einen Bruch
  * 
@@ -74,20 +72,20 @@ public class Bruch {
 	// Methods
 	// ================================================================================
 
-    public void unechterBruch() {
-        if (this.ganze != 0) {
-            this.zaehler = (this.ganze * this.nenner) + this.zaehler;
-            this.ganze = 0;
-        }
-    }
+	public void unechterBruch() {
+		if (this.ganze != 0) {
+			this.zaehler = (this.ganze * this.nenner) + this.zaehler;
+			this.ganze = 0;
+		}
+	}
 
-    public void echterBruch() {
-        while (this.zaehler > this.nenner) {
-            this.ganze++;
-            this.zaehler -= this.nenner;
-        }
-    }
-    
+	public void echterBruch() {
+		while (this.zaehler > this.nenner) {
+			this.ganze++;
+			this.zaehler -= this.nenner;
+		}
+	}
+
 	public double getDezimalzahl() {
 		return ganze + ((double) zaehler / (double) nenner);
 	}
