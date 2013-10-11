@@ -7,7 +7,32 @@ package tpe.fruh_razzaq_jando.pue1;
  */
 public class Bruch {
 
+	// ================================================================================
+	// Properties
+	// ================================================================================
+
 	private long nenner, zaehler, ganze;
+
+	// ================================================================================
+	// Constructors
+	// ================================================================================
+
+	Bruch(long zaehler, long nenner) {
+		this.zaehler = zaehler;
+		this.nenner = nenner;
+		kuerze();
+	}
+
+	Bruch(long zaehler, long nenner, long ganze) {
+		this.zaehler = zaehler;
+		this.nenner = nenner;
+		this.ganze = ganze;
+		kuerze();
+	}
+
+	// ================================================================================
+	// Accessors
+	// ================================================================================
 
 	public long getNenner() {
 		return nenner;
@@ -32,4 +57,13 @@ public class Bruch {
 	public void setGanze(long ganze) {
 		this.ganze = ganze;
 	}
+
+	// ================================================================================
+	// Methods
+	// ================================================================================
+
+	private void kuerze() {
+
+	}
+
 }
