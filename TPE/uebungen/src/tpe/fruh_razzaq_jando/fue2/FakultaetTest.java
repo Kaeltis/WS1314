@@ -1,4 +1,4 @@
-package tpe.fruh_razzq_jando.fue2;
+package tpe.fruh_razzaq_jando.fue2;
 
 import static org.junit.Assert.*;
 

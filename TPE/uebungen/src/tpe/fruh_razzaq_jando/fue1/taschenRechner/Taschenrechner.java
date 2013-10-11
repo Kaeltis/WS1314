@@ -1,4 +1,4 @@
-package tpe.fruh_razzq_jando.fue1.taschenRechner;
+package tpe.fruh_razzaq_jando.fue1.taschenRechner;
 /**
  * @author: Max Jando
  * Date: 29.09.13
