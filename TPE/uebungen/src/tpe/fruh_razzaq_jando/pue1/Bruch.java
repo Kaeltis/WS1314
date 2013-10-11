@@ -1,7 +1,5 @@
 package tpe.fruh_razzaq_jando.pue1;
 
-import java.math.*;
-
 /**
  * Diese Klasse implementiert einen Bruch
  * 
@@ -20,16 +18,26 @@ public class Bruch {
 	// ================================================================================
 
 	Bruch(long zaehler, long nenner) {
-		this.zaehler = zaehler;
-		this.nenner = nenner;
-		kuerze();
+		if (nenner == 0)
+			throw new RuntimeException(
+					"Bruch(zaehler, nenner) - nenner darf nicht 0 sein!");
+		else {
+			this.zaehler = zaehler;
+			this.nenner = nenner;
+			kuerze();
+		}
 	}
 
 	Bruch(long zaehler, long nenner, long ganze) {
-		this.zaehler = zaehler;
-		this.nenner = nenner;
-		this.ganze = ganze;
-		kuerze();
+		if (nenner == 0)
+			throw new RuntimeException(
+					"Bruch(zaehler, nenner, ganze) - nenner darf nicht 0 sein!");
+		else {
+			this.zaehler = zaehler;
+			this.nenner = nenner;
+			this.ganze = ganze;
+			kuerze();
+		}
 	}
 
 	// ================================================================================
@@ -63,6 +71,10 @@ public class Bruch {
 	// ================================================================================
 	// Methods
 	// ================================================================================
+
+	public long getDezimalzahl() {
+		return ganze + (zaehler / nenner);
+	}
 
 	private void kuerze() {
 		long ggt = getGGT(Math.min(zaehler, nenner));
