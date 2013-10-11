@@ -102,28 +102,31 @@ public class Bruch {
 	}
 
 	public Bruch addiere(Bruch zweiterBruch) {
-		boolean echt = false;
-		Bruch tmpBruch1 = this.cloneObject();
-		Bruch tmpBruch2 = zweiterBruch.cloneObject();
-
-		if (tmpBruch1.isEcht() || tmpBruch2.isEcht()) {
-			echt = true;
-		}
-
-		tmpBruch1.unechterBruch();
-		tmpBruch2.unechterBruch();
-		long zaehler = tmpBruch1.neuerZaehler(tmpBruch2, '+');
-		Bruch ergebnisBruch = new Bruch(zaehler, tmpBruch1.nenner
-				* tmpBruch2.nenner);
-		ergebnisBruch.kuerze();
-		if (echt) {
-			ergebnisBruch.echterBruch();
-		}
-		return ergebnisBruch;
+		return rechenOperation(zweiterBruch, '+');
 	}
 
-	private long neuerZaehler(Bruch tmpBruch2, char operation) {
-		switch (operation) {
+	private Bruch rechenOperation(Bruch zweiterBruch, char operation) {
+        boolean echt = false;
+        Bruch tmpBruch1 = this.cloneObject();
+        Bruch tmpBruch2 = zweiterBruch.cloneObject();
+
+        if (tmpBruch1.isEcht() || tmpBruch2.isEcht()) {
+            echt = true;
+        }
+        tmpBruch1.unechterBruch();
+        tmpBruch2.unechterBruch();
+        long zaehler = tmpBruch1.neuerZaehler(operation, tmpBruch2);
+        Bruch ergebnisBruch = new Bruch(zaehler, tmpBruch1.nenner
+                * tmpBruch2.nenner);
+        ergebnisBruch.kuerze();
+        if (echt) {
+            ergebnisBruch.echterBruch();
+        }
+        return ergebnisBruch;
+	}
+
+    private long neuerZaehler(char operation, Bruch tmpBruch2) {
+        switch (operation) {
 		case '+':
 			return (this.zaehler * tmpBruch2.nenner)
 					+ (tmpBruch2.zaehler * this.nenner);
@@ -131,10 +134,10 @@ public class Bruch {
 			return (this.zaehler * tmpBruch2.nenner)
 					- (tmpBruch2.zaehler * this.nenner);
 		}
-		return 0;
-	}
+        return 0;
+    }
 
-	public void unechterBruch() {
+    public void unechterBruch() {
 		if (this.ganze != 0) {
 			this.zaehler = (this.ganze * this.nenner) + this.zaehler;
 			this.ganze = 0;
