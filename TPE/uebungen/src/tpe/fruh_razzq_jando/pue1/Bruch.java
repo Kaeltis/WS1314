@@ -1,4 +1,4 @@
-package tpe.fruh_razzq_jando.pue1;
+package tpe.fruh_razzaq_jando.pue1;
 
 /**
  * Diese Klasse implementiert einen Bruch
@@ -64,6 +64,16 @@ public class Bruch {
 
 	private void kuerze() {
 
+	}
+
+	@Override
+	public String toString() {
+		if (ganze == 0)
+			return zaehler + "/" + nenner;
+		else if (zaehler == 0 && nenner == 0)
+			return ganze + "";
+		else
+			return ganze + " " + zaehler + "/" + nenner;
 	}
 
 }
