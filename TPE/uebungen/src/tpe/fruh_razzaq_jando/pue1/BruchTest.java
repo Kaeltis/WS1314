@@ -6,138 +6,85 @@ import org.junit.Test;
 
 public class BruchTest {
 
-	@Test
-	public void testGetDezimalzahl() {
-		Bruch bruch1 = new Bruch(19, 2);
-		assertEquals(9.5D, bruch1.getDezimalzahl(), 0.1D);
+    @Test(expected = RuntimeException.class)
+    public void testZero() {
+        new Bruch(10, 0);
+    }
 
-		Bruch bruch2 = new Bruch(16, 2);
-		assertEquals(8.0, bruch2.getDezimalzahl(), 0.1);
 
-		Bruch bruch3 = new Bruch(5, 10);
-		assertEquals(0.5, bruch3.getDezimalzahl(), 0.1);
-	}
+    @Test
+    public void testGetDezimalzahl() {
+        assertEquals(9.5D, new Bruch(19, 2).getDezimalzahl(), 0.1D);
+        assertEquals(8.0, new Bruch(16, 2).getDezimalzahl(), 0.1);
+        assertEquals(0.5, new Bruch(5, 10).getDezimalzahl(), 0.1);
+    }
 
-	@Test
-	public void testEchterBruch() {
-		Bruch bruch1e = new Bruch(4, 4, 5);
-		Bruch bruch1 = new Bruch(24, 5);
-		bruch1.echterBruch();
+    @Test
+    public void testEchterBruch() {
+        Bruch bruch1 = new Bruch(24, 5);
+        bruch1.echterBruch();
+        assertEquals(new Bruch(4, 4, 5).toString(), bruch1.toString());
 
-		assertEquals(bruch1e.toString(), bruch1.toString());
+        Bruch bruch2 = new Bruch(47, 5);
+        bruch2.echterBruch();
+        assertEquals(new Bruch(9, 2, 5).toString(), bruch2.toString());
+    }
 
-		Bruch bruch2e = new Bruch(9, 2, 5);
-		Bruch bruch2 = new Bruch(47, 5);
-		bruch2.echterBruch();
+    @Test
+    public void testUnechterBruch() {
+        Bruch bruch1 = new Bruch(4, 4, 5);
+        bruch1.unechterBruch();
+        assertEquals(new Bruch(24, 5).toString(), bruch1.toString());
 
-		assertEquals(bruch2e.toString(), bruch2.toString());
-	}
+        Bruch bruch2 = new Bruch(9, 2, 5);
+        bruch2.unechterBruch();
+        assertEquals(new Bruch(47, 5).toString(), bruch2.toString());
+    }
 
-	@Test
-	public void testUnechterBruch() {
-		Bruch bruch1 = new Bruch(4, 4, 5);
-		Bruch bruch1e = new Bruch(24, 5);
-		bruch1.unechterBruch();
+    @Test
+    public void testAddiere() {
+        assertEquals(new Bruch(3, 10).toString(), new Bruch(1, 6).addiere(new Bruch(2, 15)).toString());
+        assertEquals(new Bruch(2, 5).toString(), new Bruch(1, 5).addiere(new Bruch(1, 5)).toString());
+        assertEquals(new Bruch(8, 10).toString(), new Bruch(2, 10).addiere(new Bruch(3, 5)).toString());
+        assertEquals(new Bruch(2, 10).toString(), new Bruch(2, 10).addiere(new Bruch(0, 10)).toString());
+    }
 
-		assertEquals(bruch1e.toString(), bruch1.toString());
+    @Test
+    public void testSubtrahiere() {
+        assertEquals(new Bruch(2, 15).toString(), new Bruch(3, 10).subtrahiere(new Bruch(1, 6)).toString());
+        assertEquals(new Bruch(1, 5).toString(), new Bruch(2, 5).subtrahiere(new Bruch(1, 5)).toString());
+        assertEquals(new Bruch(3, 5).toString(), new Bruch(8, 10).subtrahiere(new Bruch(2, 10)).toString());
+    }
 
-		Bruch bruch2 = new Bruch(9, 2, 5);
-		Bruch bruch2e = new Bruch(47, 5);
-		bruch2.unechterBruch();
+    @Test
+    public void testMultipliziere() {
+        assertEquals(new Bruch(3, 60).toString(), new Bruch(3, 10).multipliziere(new Bruch(1, 6)).toString());
+        assertEquals(new Bruch(15, 6).toString(), new Bruch(3, 6).multipliziere(5).toString());
+    }
 
-		assertEquals(bruch2e.toString(), bruch2.toString());
-	}
+    @Test
+    public void testDividiere() {
+        assertEquals(new Bruch(3, 10).toString(), new Bruch(3, 60).dividiere(new Bruch(1, 6)).toString());
+        assertEquals(new Bruch(1, 200).toString(), new Bruch(3, 60).dividiere(10).toString());
+    }
 
-	@Test
-	public void testAddiere() {
-		Bruch bruch1a = new Bruch(1, 6);
-		Bruch bruch1b = new Bruch(2, 15);
-		Bruch bruch1exp = new Bruch(3, 10);
-		Bruch bruch1act = bruch1a.addiere(bruch1b);
+    @Test
+    public void testPotenziere() {
+        Bruch bruch1a = new Bruch(2, 3);
+        assertEquals(new Bruch(1, 1).toString(), bruch1a.potenziere(0).toString());
+        assertEquals(new Bruch(2, 3).toString(), bruch1a.potenziere(1).toString());
+        assertEquals(new Bruch(4, 9).toString(), bruch1a.potenziere(2).toString());
+        assertEquals(new Bruch(8, 27).toString(), bruch1a.potenziere(3).toString());
+    }
 
-		assertEquals(bruch1exp.toString(), bruch1act.toString());
+    @Test
+    public void testKehrwert() {
+        assertEquals(new Bruch(1, 2).toString(), new Bruch(2, 1).kehrwert().toString());
+    }
 
-		Bruch bruch2a = new Bruch(1, 5);
-		Bruch bruch2b = new Bruch(1, 5);
-		Bruch bruch2exp = new Bruch(2, 5);
-		Bruch bruch2act = bruch2a.addiere(bruch2b);
-
-		assertEquals(bruch2exp.toString(), bruch2act.toString());
-
-		Bruch bruch3a = new Bruch(2, 10);
-		Bruch bruch3b = new Bruch(3, 5);
-		Bruch bruch3exp = new Bruch(8, 10);
-		Bruch bruch3act = bruch3a.addiere(bruch3b);
-
-		assertEquals(bruch3exp.toString(), bruch3act.toString());
-	}
-
-	@Test
-	public void testSubtrahiere() {
-		Bruch bruch1a = new Bruch(3, 10);
-		Bruch bruch1b = new Bruch(1, 6);
-		Bruch bruch1exp = new Bruch(2, 15);
-		Bruch bruch1act = bruch1a.subtrahiere(bruch1b);
-
-		assertEquals(bruch1exp.toString(), bruch1act.toString());
-
-		Bruch bruch2a = new Bruch(2, 5);
-		Bruch bruch2b = new Bruch(1, 5);
-		Bruch bruch2exp = new Bruch(1, 5);
-		Bruch bruch2act = bruch2a.subtrahiere(bruch2b);
-
-		assertEquals(bruch2exp.toString(), bruch2act.toString());
-
-		Bruch bruch3a = new Bruch(8, 10);
-		Bruch bruch3b = new Bruch(2, 10);
-		Bruch bruch3exp = new Bruch(3, 5);
-		Bruch bruch3act = bruch3a.subtrahiere(bruch3b);
-
-		assertEquals(bruch3exp.toString(), bruch3act.toString());
-	}
-
-	@Test
-	public void testMultipliziere() {
-		Bruch bruch1a = new Bruch(3, 10);
-		Bruch bruch1b = new Bruch(1, 6);
-		Bruch bruch1exp = new Bruch(3, 60);
-		Bruch bruch1act = bruch1a.multipliziere(bruch1b);
-
-		assertEquals(bruch1exp.toString(), bruch1act.toString());
-
-		Bruch bruch2a = new Bruch(3, 6);
-		int zahl2b = 5;
-		Bruch bruch2exp = new Bruch(15, 6);
-		Bruch bruch2act = bruch2a.multipliziere(zahl2b);
-
-		assertEquals(bruch2exp.toString(), bruch2act.toString());
-	}
-
-	@Test
-	public void testDividiere() {
-		Bruch bruch1a = new Bruch(3, 60);
-		Bruch bruch1b = new Bruch(1, 6);
-		Bruch bruch1exp = new Bruch(3, 10);
-		Bruch bruch1act = bruch1a.dividiere(bruch1b);
-
-		assertEquals(bruch1exp.toString(), bruch1act.toString());
-
-		Bruch bruch2a = new Bruch(3, 60);
-		int zahl2b = 10;
-		Bruch bruch2exp = new Bruch(3, 6);
-		Bruch bruch2act = bruch2a.dividiere(zahl2b);
-
-		assertEquals(bruch2exp.toString(), bruch2act.toString());
-	}
-
-	@Test
-	public void testPotenziere() {
-		Bruch bruch1a = new Bruch(2, 3);
-		int zahl1b = 0;
-		Bruch bruch1exp = new Bruch(1, 1);
-		Bruch bruch1act = bruch1a.potenziere(zahl1b);
-
-		assertEquals(bruch1exp.toString(), bruch1act.toString());
-	}
+    @Test
+    public void testKuerze() {
+        assertEquals(new Bruch(1, 2).toString(), new Bruch(3, 6).toString());
+    }
 
 }
