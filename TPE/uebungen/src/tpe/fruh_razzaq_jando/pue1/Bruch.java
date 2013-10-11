@@ -72,6 +72,36 @@ public class Bruch {
 	// Methods
 	// ================================================================================
 
+	public Bruch addiere(Bruch zweiterBruch) {
+		boolean echt = false;
+		Bruch tmpBruch1;
+		Bruch tmpBruch2;
+		if (this.ganze != 0) {
+			echt = true;
+			tmpBruch1 = new Bruch(this.ganze, this.zaehler, this.nenner);
+		} else {
+			tmpBruch1 = new Bruch(this.zaehler, this.nenner);
+		}
+		if (zweiterBruch.ganze != 0) {
+			echt = true;
+			tmpBruch2 = new Bruch(zweiterBruch.ganze, zweiterBruch.zaehler,
+					zweiterBruch.nenner);
+		} else {
+			tmpBruch2 = new Bruch(zweiterBruch.zaehler, zweiterBruch.nenner);
+		}
+		tmpBruch1.unechterBruch();
+		tmpBruch2.unechterBruch();
+		long zaehler = (tmpBruch1.zaehler * tmpBruch2.nenner)
+				+ (tmpBruch2.zaehler * tmpBruch1.nenner);
+		Bruch ergebnisBruch = new Bruch(zaehler, tmpBruch1.nenner
+				* tmpBruch2.nenner);
+		ergebnisBruch.kuerze();
+		if (echt) {
+			ergebnisBruch.echterBruch();
+		}
+		return ergebnisBruch;
+	}
+
 	public void unechterBruch() {
 		if (this.ganze != 0) {
 			this.zaehler = (this.ganze * this.nenner) + this.zaehler;
