@@ -12,6 +12,6 @@ public class Verwaltung {
         student1.addKurs(oot);
         student1.addKurs(tpe);
         System.out.println(student1.getStundenplan());
-        System.out.println(student2.getAlter());
+
     }
 }
