@@ -134,7 +134,7 @@ public class BruchTest {
 	public void testPotenziere() {
 		Bruch bruch1a = new Bruch(2, 3);
 		int zahl1b = 0;
-		Bruch bruch1exp = new Bruch(2, 15);
+		Bruch bruch1exp = new Bruch(1, 1);
 		Bruch bruch1act = bruch1a.potenziere(zahl1b);
 
 		assertEquals(bruch1exp.toString(), bruch1act.toString());
