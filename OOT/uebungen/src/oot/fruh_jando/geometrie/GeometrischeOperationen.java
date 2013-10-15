@@ -2,8 +2,15 @@ package oot.fruh_jando.geometrie;
 
 import java.util.LinkedList;
 
+/**
+ * Hauptprogramm, welches Geometrische Figuren anlegt,
+ * und verschiedene Operationen durchführt.
+ */
 public class GeometrischeOperationen {
     public static void main(String[] args) {
+        // ================================================================================
+        // Anlegen der Objekte und speichern in der Liste
+        // ================================================================================
         Geo geo = new Geo();
         Kreis kreis1 = new Kreis(4d);
         geo.setGeos(kreis1);
@@ -20,6 +27,9 @@ public class GeometrischeOperationen {
         Raute raute1 = new Raute(6);
         geo.setGeos(raute1);
 
+        // ================================================================================
+        // Aufrufen der Flächen -und Umfangmethode (Vererbung!)
+        // ================================================================================
         double gesamtFleache = gesamtFleache(geo.getGeos());
         double gesamtUmfang = gesamtUmfang(geo.getGeos());
         System.out.println("Die Gesamtflaeche betraegt :" + gesamtFleache);
