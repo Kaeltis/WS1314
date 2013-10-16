@@ -1,6 +1,9 @@
 package oot.fruh_jando.geometrie;
 
-
+/**
+ * Klasse, welche ein Parallelogramm im Sinne einer geometrischen Figur implementiert.
+ * @author OOT_UIB_Jando_Fruh
+ */
 public class Parallelogramm extends Viereck {
 
     /*
