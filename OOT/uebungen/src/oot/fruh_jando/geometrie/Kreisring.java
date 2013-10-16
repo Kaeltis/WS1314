@@ -8,7 +8,7 @@ package oot.fruh_jando.geometrie;
 public class Kreisring extends Kreis {
     /**
      * <p>
-     * Die beiden Radien sind spezifische geometrische Elemente und werden
+     * Der kleine Radius ist ein spezifisches geometrisches Element und wird
      * deshalb nicht vererbt.
      * </p>
      */
