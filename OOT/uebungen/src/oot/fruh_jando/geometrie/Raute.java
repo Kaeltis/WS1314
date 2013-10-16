@@ -15,15 +15,17 @@ public class Raute extends Viereck {
     * spezifische Abhängigkeiten.
     * BSP: a=b=c=d
     *
-    * Die Berechnung der Fläche und des Umfang wird per Vererbung
-    * durch der Klasse Viereck errechnet.
+    * Die Berechnung der Fläche und des Umfangs wird in der Klasse Viereck berechnet.
+    * Siehe super() - Aufruf
      */
 
-
-    public Raute(double a) {
-        this.a = a;
-        berechneUmfang(this.a, this.a, this.a, this.a);
-        berechneFlaeche(this.a, this.a);
+    /**
+     * Konstruktor um eine Raute zu spezifieren
+     *
+     * @param a Seite a der Raute
+     */
+    Raute(double a) {
+        super(a);
     }
 
 }

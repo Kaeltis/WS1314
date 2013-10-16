@@ -6,16 +6,25 @@ package oot.fruh_jando.geometrie;
  * @author OOT_UIB_Jando_Fruh
  */
 public class Kreis extends Geo {
-    /*Der Radius ist ein spezifisches geometrisches Element und wird
-    * deshalb nicht vererbt
-    */
-    private double radius;
+    /**
+     * <p>
+     * Der Radius ist ein spezifisches geometrisches Element und wird
+     * deshalb nicht vererbt
+     * </p>
+     */
+    protected double radius;
 
-    public Kreis(double radius) {
+    /**
+     * Konstruktor um einen Kreis zu spezifizieren
+     *
+     * @param radius Gibt des Radius des Kreises an
+     */
+    Kreis(double radius) {
         this.radius = radius;
-        berechneUmfang();
-        berechneFlaeche();
-
+        this.berechneFlaeche();
+        if (this.getClass().getName().substring(25).equals("Kreis")) {
+            this.berechneUmfang();
+        }
     }
 
     //Keine Vererbung, da die Kreis-Fläche spezifisch ist.

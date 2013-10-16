@@ -5,20 +5,28 @@ package oot.fruh_jando.geometrie;
  *
  * @author OOT_UIB_Jando_Fruh
  */
-public class Kreisring extends Geo {
-    /*Die beiden Radien sind spezifische geometrische Elemente und werden
-    * deshalb nicht vererbt
-    */
-    private double groserRadius, kleinerRadius;
+public class Kreisring extends Kreis {
+    /**
+     * <p>
+     * Die beiden Radien sind spezifische geometrische Elemente und werden
+     * deshalb nicht vererbt.
+     * </p>
+     */
+    private double kleinerRadius;
 
+    /**
+     * Konstruktor um einen Kreisring zu spezifizieren.
+     * @param groserRadius Äußerer Radius des Kreisrings
+     * @param kleinerRadius Innerer Radius des Kreisrings
+     */
     public Kreisring(double groserRadius, double kleinerRadius) {
-        this.groserRadius = groserRadius;
+        super(groserRadius);
         this.kleinerRadius = kleinerRadius;
-        berechneFlaeche();
+        this.berechneFlaeche();
     }
 
     //Keine Vererbung, da die Kreis-Fläche spezifisch ist.
     private void berechneFlaeche() {
-        this.flaeche = ((this.groserRadius * this.groserRadius) - (this.kleinerRadius * this.kleinerRadius) * Math.PI);
+        this.flaeche = ((this.radius * this.radius) - (this.kleinerRadius * this.kleinerRadius) * Math.PI);
     }
 }

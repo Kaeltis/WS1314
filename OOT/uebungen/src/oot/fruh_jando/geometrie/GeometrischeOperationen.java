@@ -5,6 +5,7 @@ import java.util.LinkedList;
 /**
  * Hauptprogramm, welches Geometrische Figuren anlegt,
  * und verschiedene Operationen durchführt.
+ *
  * @author OOT_UIB_Jando_Fruh
  */
 public class GeometrischeOperationen {
@@ -47,6 +48,7 @@ public class GeometrischeOperationen {
         double gesamtUmfang = 0.0;
         byte counter = 0;
         for (Geo g : geos) {
+            System.out.println(g.getUmfang() + " " + g);
             //Falls die geometrische Figur keinen Umfang hat
             if (g.getUmfang() != 0) {
                 gesamtUmfang += g.getUmfang();

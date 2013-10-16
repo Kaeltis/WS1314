@@ -15,17 +15,22 @@ public class Trapez extends Viereck {
     * spezifische Abhängigkeiten.
     * BSP: b=c
     *
-    * Die Berechnung der Fläche und des Umfangs wird per Vererbung
-    * durch der Klasse Viereck errechnet.
+    * Die Berechnung des Umfangs wird in der Klasse Viereck berechnet.
+    * Siehe super() - Aufruf
+    *
+    * Der Flächeninhalt ist spezifisch und wird deshalb hier in der eigenen Klasse berechnet
      */
 
-    public Trapez(double a, double b, double c, double hoehe) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-        this.d = b;
-        this.hoehe = hoehe;
-        super.berechneUmfang(this.a, this.b, this.c, this.d);
+    /**
+     * Konstruktor um ein Trapez zu spezifizieren
+     *
+     * @param a     Seite a des Trapez
+     * @param b     Seite b des Trapez
+     * @param c     Seite c des Trapez
+     * @param hoehe Hoehe des Trapez
+     */
+    Trapez(double a, double b, double c, double hoehe) {
+        super(a, b, c, hoehe);
         berechneFlaecheninhalt(this.a, this.c, this.hoehe);
     }
 

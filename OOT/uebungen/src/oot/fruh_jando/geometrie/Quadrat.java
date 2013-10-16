@@ -7,6 +7,11 @@ package oot.fruh_jando.geometrie;
  */
 public class Quadrat extends Viereck {
 
+    /**
+     * <p>Spezifisches Feld für ein Quadrat</p>
+     */
+    private double diagonale;
+
      /*
     * Diese Klasse hat keine Membervariablen, da diese von einer zentralen
     * Klasse "Viereck" vererbt werden.
@@ -15,14 +20,18 @@ public class Quadrat extends Viereck {
     * spezifische Abhängigkeiten.
     * BSP: a=b=c=d
     *
-    * Die Berechnung der Fläche und des Umfangs wird per Vererbung
-    * durch der Klasse Viereck errechnet.
+    * Die Berechnung der Fläche und des Umfangs wird in der Klasse Viereck berechnet.
+    * Siehe super() - Aufruf
      */
 
+    /**
+     * Konstruktor um ein Quadrat zu spezifizieren
+     *
+     * @param a Seite a des Quadrats
+     */
     Quadrat(double a) {
-        this.a = a;
-        berechneFlaeche(this.a, this.a);
-        berechneUmfang(this.a, this.a, this.a, this.a);
+        super(a);
+        this.diagonale = a * Math.sqrt(2);
     }
 
 }
