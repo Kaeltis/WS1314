@@ -29,8 +29,8 @@ public class Viereck extends Geo {
         this.c = c;
         this.d = d;
         this.hoehe = hoehe;
-        berechneFlaeche(a, b);
-        berechneUmfang(a, b, c, d);
+        berechneFlaeche();
+        berechneUmfang();
     }
 
     /**
@@ -80,8 +80,8 @@ public class Viereck extends Geo {
     * Sollte eine spzifische Flächenberechnung erwünscht sein, kann man einfach
     * in der jeweiligen Klasse die Methode überschreiben (siehe Trapez)
     */
-    protected void berechneFlaeche(double a, double b) {
-        this.flaeche = a * b;
+    protected void berechneFlaeche() {
+        this.flaeche = this.a * this.b;
     }
 
     /*
@@ -89,8 +89,8 @@ public class Viereck extends Geo {
    * Sollte eine spzifische Umfangberechnung erwünscht sein, kann man einfach
    * in der jeweiligen Klasse die Methode überschreiben
    */
-    protected void berechneUmfang(double a, double b, double c, double d) {
-        this.umfang = a + b + c + d;
+    protected void berechneUmfang() {
+        this.umfang = this.a + this.b + this.c + this.d;
     }
 
 }

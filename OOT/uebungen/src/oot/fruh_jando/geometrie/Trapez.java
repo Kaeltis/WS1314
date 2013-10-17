@@ -31,12 +31,11 @@ public class Trapez extends Viereck {
      */
     Trapez(double a, double b, double c, double hoehe) {
         super(a, b, c, hoehe);
-        berechneFlaecheninhalt(this.a, this.c, this.hoehe);
     }
 
     //Keine Vererbung, da die Trapez-Fläche spezifisch ist.
-    private void berechneFlaecheninhalt(double a, double c, double hoehe) {
-        this.flaeche = (0.5 * (a + c) * hoehe);
+    protected void berechneFlaeche() {
+        this.flaeche = (0.5 * (this.a + this.c) * this.hoehe);
     }
 
 
