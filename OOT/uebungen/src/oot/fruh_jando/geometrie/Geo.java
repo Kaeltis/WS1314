@@ -33,8 +33,8 @@ public class Geo {
     /*Das setzen der Objektreferenzen in den Abstrakten Datentyp wurde
     * in eine extra Methode ausgelagert
     */
-    void setGeos(Object object) {
-        this.geos.add((Geo) object);
+    void addGeo(Geo geo) {
+        this.geos.add(geo);
     }
 
     //to String Methode soll vererbt werden, damit in der jeweiligen Klasse der

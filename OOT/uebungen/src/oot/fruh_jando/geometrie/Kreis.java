@@ -3,6 +3,7 @@ package oot.fruh_jando.geometrie;
 /**
  * Klasse, welche einen Kreis im Sinne einer geometrischen Figur implementiert.
  * Ein Kreis ist eine Vollwertige Figur, da sie einen Umfang besitzt.
+ *
  * @author OOT_UIB_Jando_Fruh
  */
 public class Kreis extends VollwertigeFigur {
@@ -22,14 +23,12 @@ public class Kreis extends VollwertigeFigur {
     Kreis(double radius) {
         this.radius = radius;
         this.berechneFlaeche();
-        if (this.getClass().getName().substring(25).equals("Kreis")) {
-            this.berechneUmfang();
-        }
+        this.berechneUmfang();
     }
 
     //Keine Vererbung, da die Kreis-Fläche spezifisch ist.
     private void berechneFlaeche() {
-        this.flaeche = this.radius * this.radius * Math.PI;
+        this.flaeche = Math.pow(this.radius, 2) * Math.PI;
     }
 
     //Keine Vererbung, da der Kreis-Umfang spezifisch ist.

@@ -15,19 +15,19 @@ public class GeometrischeOperationen {
         // ================================================================================
         Geo geo = new Geo();
         Kreis kreis1 = new Kreis(4d);
-        geo.setGeos(kreis1);
+        geo.addGeo(kreis1);
         Trapez trapez1 = new Trapez(3, 4, 5, 8);
-        geo.setGeos(trapez1);
+        geo.addGeo(trapez1);
         Quadrat quadrat1 = new Quadrat(6);
-        geo.setGeos(quadrat1);
+        geo.addGeo(quadrat1);
         Kreisring kreisring1 = new Kreisring(12, 9);
-        geo.setGeos(kreisring1);
+        geo.addGeo(kreisring1);
         Kreissegment kreissegment1 = new Kreissegment(6, 45);
-        geo.setGeos(kreissegment1);
+        geo.addGeo(kreissegment1);
         Parallelogramm parallelogramm1 = new Parallelogramm(4, 8, 5);
-        geo.setGeos(parallelogramm1);
+        geo.addGeo(parallelogramm1);
         Raute raute1 = new Raute(6);
-        geo.setGeos(raute1);
+        geo.addGeo(raute1);
 
         // ================================================================================
         // Aufrufen der Flächen -und Umfangmethode (Vererbung!)

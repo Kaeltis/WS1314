@@ -3,6 +3,7 @@ package oot.fruh_jando.geometrie;
 /**
  * Klasse, welche einen Kreisring im Sinne einer geometrischen Figur implementiert.
  * Ein Kreisring ist eine Halbwertige Figur, da sie keinen Umfang besitzt.
+ *
  * @author OOT_UIB_Jando_Fruh
  */
 public class Kreisring extends HalbwertigeFigur {
@@ -16,7 +17,8 @@ public class Kreisring extends HalbwertigeFigur {
 
     /**
      * Konstruktor um einen Kreisring zu spezifizieren.
-     * @param groserRadius Äußerer Radius des Kreisrings
+     *
+     * @param groserRadius  Äußerer Radius des Kreisrings
      * @param kleinerRadius Innerer Radius des Kreisrings
      */
     public Kreisring(double groserRadius, double kleinerRadius) {
@@ -27,6 +29,6 @@ public class Kreisring extends HalbwertigeFigur {
 
     //Keine Vererbung, da die Kreis-Fläche spezifisch ist.
     private void berechneFlaeche() {
-        this.flaeche = ((this.groserRadius * this.groserRadius) - (this.kleinerRadius * this.kleinerRadius)) * Math.PI;
+        this.flaeche = (Math.pow(this.groserRadius, 2) - Math.pow(this.kleinerRadius, 2)) * Math.PI;
     }
 }
