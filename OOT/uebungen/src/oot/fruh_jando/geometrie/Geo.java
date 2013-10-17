@@ -7,6 +7,9 @@ import java.util.LinkedList;
  * Alle Äuserungen sind im Bezug gehalten auf das Aufgabenblatt:
  * http://moodle.hs-mannheim.de/mod/resource/view.php?id=23541
  *
+ * Eine geometrische Figur kann eine VollwertigeFigur(Umfang + Fläche) oder eine HalbwertigeFigur(Nur Umfang)
+ * sein.
+ *
  * @author OOT_UIB_Jando_Fruh
  */
 
@@ -14,11 +17,6 @@ public class Geo {
     // Abstrakte Datenstruktur um Referenzen der Klasse
     // Geo(in Form von vererbten Objekten der jeweiligen Klasse zu speichern)
     private LinkedList<Geo> geos = new LinkedList<Geo>();
-
-    //Wichtig für die Vererbung zu deklarieren. Standardannahme ist,
-    // das jede geometrische Figur eine Fläche und einen Umfang hat.
-    protected double flaeche;
-    protected double umfang;
 
     /*
     * Getter für die dynamische Datenstruktur
@@ -37,23 +35,6 @@ public class Geo {
     */
     void setGeos(Object object) {
         this.geos.add((Geo) object);
-    }
-
-    /*
-    * Um den Umfang und Flaeche auf allen Ebenen zu erhalten ist
-    * eine Deklaration hier von Nöten. Das setzen der Fläche und des Umfangs wurde
-    * bewusst weggelassen, da diese Berechnungen von Figur zu Figur unterschiedlich sind.
-    * Die Fläche und der Umfang wird im Konstruktor der jeweiligen Klasse
-    * beim Erstellen des Objektes errechnet.
-    * Ergänzung: Bei den Figuren, welche aus einem 4-Eck abgeleitet werden können, wurde
-    * eine seperate Klasse Viereck erstellt.
-    */
-    double getUmfang() {
-        return umfang;
-    }
-
-    double getFlaeche() {
-        return flaeche;
     }
 
     //to String Methode soll vererbt werden, damit in der jeweiligen Klasse der

@@ -2,10 +2,10 @@ package oot.fruh_jando.geometrie;
 
 /**
  * Klasse, welche einen Kreis im Sinne einer geometrischen Figur implementiert.
- *
+ * Ein Kreis ist eine Vollwertige Figur, da sie einen Umfang besitzt.
  * @author OOT_UIB_Jando_Fruh
  */
-public class Kreis extends Geo {
+public class Kreis extends VollwertigeFigur {
     /**
      * <p>
      * Der Radius ist ein spezifisches geometrisches Element und wird

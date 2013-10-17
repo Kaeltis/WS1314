@@ -40,6 +40,23 @@ public class GeometrischeOperationen {
         printAll(geo.getGeos());
     }
 
+    /**
+     * Methode um wollwertige geometrische Figuren in der Liste zu zählen.
+     * Wichtig für den Durchschnitts-Umfang.
+     * @param geos Liste der geometrischen Objekte
+     * @return Die Gesamtanzahl aller Vollwertigen geometrischen Figuren
+     */
+    private static int getListSize(LinkedList<Geo> geos) {
+        int counter = 0;
+        for (Geo g : geos) {
+            if (g instanceof VollwertigeFigur) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+
     private static void printAll(LinkedList<Geo> geos) {
         System.out.println(geos);
     }
@@ -48,21 +65,18 @@ public class GeometrischeOperationen {
         double gesamtUmfang = 0.0;
         byte counter = 0;
         for (Geo g : geos) {
-            System.out.println(g.getUmfang() + " " + g);
             //Falls die geometrische Figur keinen Umfang hat
-            if (g.getUmfang() != 0) {
-                gesamtUmfang += g.getUmfang();
-            } else {
-                counter++;
+            if (g instanceof VollwertigeFigur) {
+                gesamtUmfang += ((VollwertigeFigur) g).getUmfang(); //Expliziter Cast zu VollwertigeFigur
             }
         }
-        return (gesamtUmfang / (geos.size() - counter)); //Den Durchschnitt des Gesamt-Umfangs zurückgeben
+        return (gesamtUmfang / getListSize(geos)); //Den Durchschnitt des Gesamt-Umfangs zurückgeben
     }
 
     private static double gesamtFleache(LinkedList<Geo> geos) {
         double gesamtflaeche = 0.0;
         for (Geo g : geos) {
-            gesamtflaeche += g.getFlaeche();
+            gesamtflaeche += ((HalbwertigeFigur)g).getFlaeche(); //Expliziter Cast zu Halbwertige Figur
         }
         return gesamtflaeche;
     }

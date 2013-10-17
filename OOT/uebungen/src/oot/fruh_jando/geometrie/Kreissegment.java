@@ -2,10 +2,10 @@ package oot.fruh_jando.geometrie;
 
 /**
  * Klasse, welche ein Kreissegment im Sinne einer geometrischen Figur implementiert.
- *
+ * Ein Kreisring ist eine Halbwertige Figur, da sie keinen Umfang besitzt.
  * @author OOT_UIB_Jando_Fruh
  */
-public class Kreissegment extends Kreis {
+public class Kreissegment extends HalbwertigeFigur {
     /*Der Radius und der Winkel sind spezifische geometrische Elemente und werden
     * deshalb nicht vererbt
     */
@@ -17,12 +17,12 @@ public class Kreissegment extends Kreis {
      * @param winkel Gibt den Winkel des Kreissegements an
      */
     public Kreissegment(double radius, double winkel) {
-        super(radius);
+        this.radius = radius;
         this.winkel = winkel;
         this.berechneFlaeche();
     }
 
-    //Keine Vererbung, da die Kreis-Fläche spezifisch ist.
+    //Keine Vererbung, da die Kreissegment-Fläche spezifisch ist.
     private void berechneFlaeche() {
         this.flaeche = (this.radius * this.radius * Math.PI * this.winkel) / 360;
     }
