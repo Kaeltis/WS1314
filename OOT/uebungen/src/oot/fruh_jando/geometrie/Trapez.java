@@ -33,6 +33,7 @@ public class Trapez extends Viereck {
         super(a, b, c, hoehe);
     }
 
+    /**/
     //Keine Vererbung, da die Trapez-Fläche spezifisch ist.
     protected void berechneFlaeche() {
         this.flaeche = (0.5 * (this.a + this.c) * this.hoehe);
