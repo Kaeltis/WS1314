@@ -41,8 +41,8 @@ public class Geo {
     //Klassenname ausgegeben wird.
     @Override
     public String toString() {
-        //substring(Ab welchem Zeichen bei einem Paramaeter) entfernt den
-        // absoluten Dateinamen der Klassendatei.
+        //substring(Ab welchem Zeichen soll abgwschnitten werden: bei einem Paramaeter) entfernt den
+        // in unserem Fall den absoluten Dateinamen der Klassendatei.
         //Bsp: Aus oot.fruh_jando.geometrie.Kreis  wird Kreis
         return this.getClass().getName().substring(25);
     }

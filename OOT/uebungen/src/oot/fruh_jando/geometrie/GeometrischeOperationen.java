@@ -65,7 +65,8 @@ public class GeometrischeOperationen {
         double gesamtUmfang = 0.0;
         byte counter = 0;
         for (Geo g : geos) {
-            //Falls die geometrische Figur keinen Umfang hat
+            //Falls die geometrische Figur keinen Umfang hat.
+            //Nur Vollwertige Figuren haben einen Umfang
             if (g instanceof VollwertigeFigur) {
                 gesamtUmfang += ((VollwertigeFigur) g).getUmfang(); //Expliziter Cast zu VollwertigeFigur
             }

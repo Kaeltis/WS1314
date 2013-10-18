@@ -11,10 +11,16 @@ public class VollwertigeFigur extends HalbwertigeFigur{
 
     /**
      * <p>Wichtig für die Vererbung.
-     //Eine Vollwertige Figur hat einen Umfang und eine Fläche<p/>
+     * Eine Vollwertige Figur hat einen Umfang und eine Fläche<p/>
      */
     protected double umfang;
 
+    /**
+     * <p>Methode zum Ausgeben des Umfangs von allen Klassen, welche von
+     * Vollwertige Figur erben --> Vererbung!<p/>
+     *
+     * @return Den Umfang der geomtrischen auf welcher getUmfang() aufgerufen wurde
+     */
     protected double getUmfang() {
         return umfang;
     }

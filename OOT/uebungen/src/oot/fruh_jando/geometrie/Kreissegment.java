@@ -7,9 +7,10 @@ package oot.fruh_jando.geometrie;
  * @author OOT_UIB_Jando_Fruh
  */
 public class Kreissegment extends HalbwertigeFigur {
-    /*Der Radius und der Winkel sind spezifische geometrische Elemente und werden
-    * deshalb nicht vererbt
-    */
+    /**
+     * Der Radius und der Winkel sind spezifische geometrische Elemente und werden
+     * deshalb nicht vererbt
+     */
     private double radius, winkel;
 
     /**
@@ -24,7 +25,9 @@ public class Kreissegment extends HalbwertigeFigur {
         this.berechneFlaeche();
     }
 
-    //Keine Vererbung, da die Kreissegment-Fläche spezifisch ist.
+    /**
+     * Keine Vererbung, da die Kreissegment-Fläche spezifisch ist.
+     */
     private void berechneFlaeche() {
         this.flaeche = (Math.pow(this.radius, 2) * Math.PI * this.winkel) / 360;
     }
