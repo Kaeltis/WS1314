@@ -26,7 +26,7 @@ public class GeometrischeOperationen {
         geo.addGeo(kreissegment1);
         Parallelogramm parallelogramm1 = new Parallelogramm(4, 8, 5);
         geo.addGeo(parallelogramm1);
-        Raute raute1 = new Raute(6);
+        Raute raute1 = new Raute(6, 12, 10);
         geo.addGeo(raute1);
 
         // ================================================================================

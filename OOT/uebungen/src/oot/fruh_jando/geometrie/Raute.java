@@ -7,6 +7,11 @@ package oot.fruh_jando.geometrie;
  */
 public class Raute extends Viereck {
 
+    /**
+     * <p>Eine Raute hat zusätzlich 2 Diagonalen</p>
+     */
+    protected double e, f;
+
       /*
     * Diese Klasse hat keine Membervariablen, da diese von einer zentralen
     * Klasse "Viereck" vererbt werden.
@@ -24,8 +29,14 @@ public class Raute extends Viereck {
      *
      * @param a Seite a der Raute
      */
-    Raute(double a) {
+    Raute(double a, double e, double f) {
         super(a);
+        this.e = e;
+        this.f = f;
+        berechneFlaeche();
     }
 
+    protected void berechneFlaeche() {
+        this.flaeche = this.e * this.f;
+    }
 }
