@@ -2,11 +2,12 @@ package oot.fruh_jando.geometrie;
 
 /**
  * Klasse, welche ein Viereck im Sinne einer geometrischen Figur implementiert.
- * Hier sind jediglich allgemeine Eigenschaften implementiert
- *
+ * Hier sind jediglich allgemeine Eigenschaften implementiert.
+ * Andere Klassen, welche auch ein 4-Eck sind erben von dieser Klasse.
+ * Das Viereck ist eine Vollwertige Figur, da sie einen Umfang besitzt.
  * @author OOT_UIB_Jando_Fruh
  */
-public class Viereck extends Geo {
+public class Viereck extends VollwertigeFigur {
 
     /*Jedes 4-Eck hat 4 Seiten und eine Höhe.
     * Bausteine, welche für jede Klasse, die von Viereck erben zur Verfügung stehen
