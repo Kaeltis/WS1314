@@ -36,6 +36,9 @@ public class Raute extends Viereck {
         berechneFlaeche();
     }
 
+    /**
+     * Die Rauten-Flächenberechnung ist aufgrund der diagonalen speziell
+     */
     protected void berechneFlaeche() {
         this.flaeche = this.e * this.f;
     }
