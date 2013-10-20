@@ -48,24 +48,12 @@ public class Bruch {
         return nenner;
     }
 
-    public void setNenner(long nenner) {
-        this.nenner = nenner;
-    }
-
     public long getZaehler() {
         return zaehler;
     }
 
-    public void setZaehler(long zaehler) {
-        this.zaehler = zaehler;
-    }
-
     public long getGanze() {
         return ganze;
-    }
-
-    public void setGanze(long ganze) {
-        this.ganze = ganze;
     }
 
     // ================================================================================
@@ -112,15 +100,13 @@ public class Bruch {
         tmpBruch1.unechterBruch();
         tmpBruch2.unechterBruch();
 
-        if (tmpBruch1.getZaehler() == tmpBruch2.getZaehler()
-                && tmpBruch1.getNenner() == tmpBruch2.getNenner())
-            return true;
-        else
-            return false;
+        return tmpBruch1.getZaehler() == tmpBruch2.getZaehler()
+                && tmpBruch1.getNenner() == tmpBruch2.getNenner();
     }
 
     /**
      * Methode, welche überprüft ob ein Bruch echt ist.
+     *
      * @return Einen Boolean ob der Bruch Echt ist.
      */
     public boolean isEcht() {
@@ -129,13 +115,14 @@ public class Bruch {
 
     /**
      * Methode liefert zu einem Bruch den Kehrwert Bsp (1/2 = 2/1)
+     *
      * @return einen neuen Bruch mit des Kehrwertes des alten Bruchs
      */
     public Bruch kehrwert() {
         return new Bruch(this.nenner, this.zaehler);
     }
 
-    
+
     private Bruch cloneObject() {
         if (this.ganze != 0) {
             return new Bruch(this.ganze, this.zaehler, this.nenner);
@@ -146,7 +133,8 @@ public class Bruch {
 
     /**
      * Methode, welche einen Bruch übergeben bekommt, um eine interne Methode zum Rechnen aufzurufen
-     * @param zweiterBruch
+     *
+     * @param zweiterBruch Ein zweiter Bruch zum Berechnen eines neuen Bruchs
      * @return Das Ergebnis von rechenOperation
      */
     public Bruch addiere(Bruch zweiterBruch) {
@@ -155,7 +143,8 @@ public class Bruch {
 
     /**
      * Methode, welche einen Bruch übergeben bekommt, um eine interne Methode zum Rechnen aufzurufen
-     * @param zweiterBruch
+     *
+     * @param zweiterBruch Ein zweiter Bruch zum Berechnen eines neuen Bruchs
      * @return Das Ergebnis von rechenOperation
      */
     public Bruch subtrahiere(Bruch zweiterBruch) {
@@ -164,7 +153,8 @@ public class Bruch {
 
     /**
      * Methode, welche einen Bruch übergeben bekommt, um eine interne Methode zum Rechnen aufzurufen
-     * @param zweiterBruch
+     *
+     * @param zweiterBruch Ein zweiter Bruch zum Berechnen eines neuen Bruchs
      * @return Das Ergebnis von rechenOperation
      */
     public Bruch multipliziere(Bruch zweiterBruch) {
@@ -173,7 +163,8 @@ public class Bruch {
 
     /**
      * Methode, welche einen Wert übergeben bekommt, um eine interne Methode zum Rechnen aufzurufen
-     * @param wert
+     *
+     * @param wert Eine Zahl mit welcher der Bruch multipliziert wird
      * @return Das Ergebnis von rechenOperation
      */
     public Bruch multipliziere(long wert) {
@@ -182,7 +173,8 @@ public class Bruch {
 
     /**
      * Methode, welche einen Bruch übergeben bekommt, um eine interne Methode zum Rechnen aufzurufen
-     * @param zweiterBruch
+     *
+     * @param zweiterBruch Ein zweiter Bruch zum Berechnen eines neuen Bruchs
      * @return Das Ergebnis von rechenOperation
      */
     public Bruch dividiere(Bruch zweiterBruch) {
@@ -191,7 +183,8 @@ public class Bruch {
 
     /**
      * Methode, welche einen Bruch übergeben bekommt, um eine interne Methode zum Rechnen aufzurufen
-     * @param wert
+     *
+     * @param wert Eine Zahl mit welcher der Bruch multipliziert wird
      * @return Das Ergebnis von rechenOperation
      */
     public Bruch dividiere(long wert) {
@@ -201,39 +194,35 @@ public class Bruch {
     private Bruch rechenOperation(Bruch zweiterBruch, char operation) {
         boolean echt = false;
 
-        // Da die Objekte nicht verändert werden dürfen, wird ein deep copy Klon von beiden Brüchen angelegt.
-        // Siehe Methode cloneObject
-        Bruch tmpBruch1 = this.cloneObject();
-        Bruch tmpBruch2 = zweiterBruch.cloneObject();
-
+        //Beide Brüche unecht machen um das Rechnen zu vereinfachen
+        Bruch tmpBruch1 = this.unechterBruch();
+        Bruch tmpBruch2 = zweiterBruch.unechterBruch();
         Bruch ergebnisBruch;
 
         if (tmpBruch1.isEcht() || tmpBruch2.isEcht()) {  //War einer der beiden Brüche vorher echt?
             echt = true;
         }
 
-        //Beide Brüche unecht machen um das Rechnen zu vereinfachen
-        tmpBruch1.unechterBruch();
-        tmpBruch2.unechterBruch();
 
-        //Aufruf der einer Methode um einheitlich den Zähler zu berechnen
+        //Aufruf einer Methode um einheitlich den Zähler zu berechnen
         long zaehler = tmpBruch1.neuerZaehler(operation, tmpBruch2);
-
         long nenner;
 
-        //Die Operation geteilt, wird gesondert behandelt aufgrund es Kehrwertes
+        //Die Operation geteilt, wird gesondert behandelt aufgrund des Kehrwertes
         if (operation != ':') {
             nenner = tmpBruch1.nenner * tmpBruch2.nenner;
         } else {
             nenner = tmpBruch1.nenner * tmpBruch2.kehrwert().nenner;
         }
         ergebnisBruch = new Bruch(zaehler, nenner);
-        ergebnisBruch.kuerze();
+        ergebnisBruch = ergebnisBruch.rechenKuerzen();
 
         if (echt) {
-            ergebnisBruch.echterBruch();
+            ergebnisBruch = ergebnisBruch.echterBruch();
         }
+
         return ergebnisBruch;
+
     }
 
     private long neuerZaehler(char operation, Bruch tmpBruch2) {
@@ -258,10 +247,11 @@ public class Bruch {
      * Methode, welche aus einem echten/unechten Bruch einen unechten Bruch macht.
      * Unechter Bruch z.B. 7/4
      */
-    public void unechterBruch() {
+    public Bruch unechterBruch() {
         if (this.ganze != 0) {
-            this.zaehler = (this.ganze * this.nenner) + this.zaehler;
-            this.ganze = 0;
+            return (new Bruch(0, (this.ganze * this.nenner) + this.zaehler, this.nenner));
+        } else {
+            return (new Bruch(this.zaehler, this.nenner));
         }
     }
 
@@ -269,15 +259,18 @@ public class Bruch {
      * Methode, welche aus einem echten/unechten Bruch einen unechten Bruch macht.
      * Unechter Bruch z.B. 1 3/4
      */
-    public void echterBruch() {
-        while (this.zaehler > this.nenner) {
-            this.ganze++;
-            this.zaehler -= this.nenner;
+    public Bruch echterBruch() {
+        Bruch neuerBruch = this.cloneObject();
+        while (neuerBruch.zaehler > neuerBruch.nenner) {
+            neuerBruch.ganze++;
+            neuerBruch.zaehler -= neuerBruch.nenner;
         }
+        return neuerBruch;
     }
 
     /**
      * Methode, welche von einem Bruch den Dezimalwert berechnet.
+     *
      * @return Einen neuen Double-Wert mit dem Ergebnis
      */
     public double getDezimalzahl() {
@@ -287,12 +280,21 @@ public class Bruch {
     private void kuerze() {
         if (this.zaehler != 0) {
             //Zum Kürzen brauchen wird den GGT (Größten gemeinsamen Teiler)
-            long ggt = getGGT(Math.min(this.zaehler, this.nenner)); //Kleinere von beiden Zahlen wird übergeben
+            long ggt = getGGT(Math.abs(Math.min(this.zaehler, this.nenner))); //Kleinere von beiden Zahlen wird übergeben
 
             this.zaehler = this.zaehler / ggt;
             this.nenner = this.nenner / ggt;
         }
     }
+
+    private Bruch rechenKuerzen() {
+        if (this.zaehler != 0) {
+            long ggt = getGGT(Math.min(this.zaehler, this.nenner));
+            return (new Bruch(this.ganze, this.zaehler / ggt, this.nenner / ggt));
+        }
+        return (new Bruch(this.ganze, this.zaehler, this.nenner));
+    }
+
 
     private long getGGT(long aktuelleZahl) {
         //Sobald Nenner und Zähler keinen Rest mehr haben mit der aktuellen Zahl haben wir unseren GGT gefunden
@@ -315,4 +317,25 @@ public class Bruch {
             return ganze + " " + zaehler + "/" + nenner;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Bruch bruch = (Bruch) o;
+
+        if (ganze != bruch.ganze) return false;
+        if (nenner != bruch.nenner) return false;
+        if (zaehler != bruch.zaehler) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (nenner ^ (nenner >>> 32));
+        result = 31 * result + (int) (zaehler ^ (zaehler >>> 32));
+        result = 31 * result + (int) (ganze ^ (ganze >>> 32));
+        return result;
+    }
 }
