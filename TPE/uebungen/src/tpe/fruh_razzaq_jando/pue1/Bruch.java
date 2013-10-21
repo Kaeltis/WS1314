@@ -86,24 +86,6 @@ public class Bruch {
         return newBruch;
     }
 
-
-    /**
-     * Methode, welche überprüft, ob 2 Brüche gleich sind. Hierbei wird überprüft ob
-     * Nenner = Nenner und Zähler = Zähler
-     *
-     * @param zweiterBruch - Der Bruch mit, welchem verglichen werden soll
-     * @return - Es wird ein Boolean returned ob der Bruch dem anderen entspricht
-     */
-    public boolean equals(Bruch zweiterBruch) {
-        Bruch tmpBruch1 = this.cloneObject();
-        Bruch tmpBruch2 = zweiterBruch.cloneObject();
-        tmpBruch1.unechterBruch();
-        tmpBruch2.unechterBruch();
-
-        return tmpBruch1.getZaehler() == tmpBruch2.getZaehler()
-                && tmpBruch1.getNenner() == tmpBruch2.getNenner();
-    }
-
     /**
      * Methode, welche überprüft ob ein Bruch echt ist.
      *
@@ -124,7 +106,7 @@ public class Bruch {
 
 
     private Bruch cloneObject() {
-        if (this.ganze != 0) {
+        if (isEcht()) {
             return new Bruch(this.ganze, this.zaehler, this.nenner);
         } else {
             return new Bruch(this.zaehler, this.nenner);
@@ -248,7 +230,7 @@ public class Bruch {
      * Unechter Bruch z.B. 7/4
      */
     public Bruch unechterBruch() {
-        if (this.ganze != 0) {
+        if (isEcht()) {
             return (new Bruch(0, (this.ganze * this.nenner) + this.zaehler, this.nenner));
         } else {
             return (new Bruch(this.zaehler, this.nenner));
