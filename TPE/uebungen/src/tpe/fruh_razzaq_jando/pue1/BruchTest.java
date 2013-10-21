@@ -36,7 +36,7 @@ public class BruchTest {
     }
 
     public void testMinusMinus() {
-        Bruch bruch1 = new Bruch(-2,-3);
+        Bruch bruch1 = new Bruch(-2, -3);
 
 
     }
@@ -89,6 +89,7 @@ public class BruchTest {
     @Test
     public void testKehrwert() {
         assertEquals(new Bruch(1, 2), new Bruch(2, 1).kehrwert());
+        assertEquals(new Bruch(2, 1, 2), new Bruch(2, 2, 1).kehrwert());
     }
 
     @Test

@@ -101,11 +101,8 @@ public class Bruch {
      * @return einen neuen Bruch mit des Kehrwertes des alten Bruchs
      */
     public Bruch kehrwert() {
-        if (isEcht()) {
-            Bruch tempBruch = this.clone();
-            tempBruch = tempBruch.unechterBruch();
-            tempBruch.kehrwert();
-            return tempBruch.echterBruch();
+        if (this.isEcht()) {
+            return (new Bruch(this.ganze, this.nenner, this.zaehler));
         } else {
             return new Bruch(this.nenner, this.zaehler);
         }
@@ -270,7 +267,6 @@ public class Bruch {
         if (this.zaehler != 0) {
             //Zum Kürzen brauchen wird den GGT (Größten gemeinsamen Teiler)
             long ggt = getGGT(Math.abs(Math.min(this.zaehler, this.nenner))); //Kleinere von beiden Zahlen wird übergeben
-
             this.zaehler = this.zaehler / ggt;
             this.nenner = this.nenner / ggt;
         }
@@ -315,9 +311,8 @@ public class Bruch {
 
         if (ganze != bruch.ganze) return false;
         if (nenner != bruch.nenner) return false;
-        if (zaehler != bruch.zaehler) return false;
+        return zaehler == bruch.zaehler;
 
-        return true;
     }
 
     @Override
