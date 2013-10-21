@@ -35,6 +35,12 @@ public class BruchTest {
         assertEquals(new Bruch(16, 25), bruch1.multipliziere(bruch2));
     }
 
+    public void testMinusMinus() {
+        Bruch bruch1 = new Bruch(-2,-3);
+
+
+    }
+
     @Test
     public void testUnechterBruch() {
         Bruch bruch1 = new Bruch(4, 4, 5).unechterBruch();

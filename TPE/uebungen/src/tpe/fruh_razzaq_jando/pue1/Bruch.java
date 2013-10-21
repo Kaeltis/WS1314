@@ -101,11 +101,18 @@ public class Bruch {
      * @return einen neuen Bruch mit des Kehrwertes des alten Bruchs
      */
     public Bruch kehrwert() {
-        return new Bruch(this.nenner, this.zaehler);
+        if (isEcht()) {
+            Bruch tempBruch = this.clone();
+            tempBruch = tempBruch.unechterBruch();
+            tempBruch.kehrwert();
+            return tempBruch.echterBruch();
+        } else {
+            return new Bruch(this.nenner, this.zaehler);
+        }
     }
 
-
-    private Bruch cloneObject() {
+    @Override
+    public Bruch clone() {
         if (isEcht()) {
             return new Bruch(this.ganze, this.zaehler, this.nenner);
         } else {
@@ -242,7 +249,7 @@ public class Bruch {
      * Unechter Bruch z.B. 1 3/4
      */
     public Bruch echterBruch() {
-        Bruch neuerBruch = this.cloneObject();
+        Bruch neuerBruch = this.clone();
         while (neuerBruch.zaehler > neuerBruch.nenner) {
             neuerBruch.ganze++;
             neuerBruch.zaehler -= neuerBruch.nenner;
