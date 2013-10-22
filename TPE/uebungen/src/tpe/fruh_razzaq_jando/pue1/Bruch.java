@@ -289,10 +289,10 @@ public class Bruch {
             return getGGT(aktuelleZahl - 1); //Rekursiver Aufruf, mache das Problem kleiner
     }
 
-    @Override
     /**
      * Überschreiben der toString() Methode um den Bruch formatiert auszugeben
      */
+    @Override
     public String toString() {
         if (ganze == 0)
             return zaehler + "/" + nenner;
