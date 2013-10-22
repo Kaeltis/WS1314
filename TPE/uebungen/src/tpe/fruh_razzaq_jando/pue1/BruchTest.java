@@ -101,7 +101,6 @@ public class BruchTest {
     public void testHashCode() {
         assertEquals(new Bruch(3, 4, 5).hashCode(), new Bruch(3, 4, 5).hashCode());
         assertEquals(new Bruch(4, 5).hashCode(), new Bruch(4, 5).hashCode());
-
     }
 
 }

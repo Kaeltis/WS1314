@@ -322,4 +322,5 @@ public class Bruch {
         result = 31 * result + (int) (ganze ^ (ganze >>> 32));
         return result;
     }
+
 }
