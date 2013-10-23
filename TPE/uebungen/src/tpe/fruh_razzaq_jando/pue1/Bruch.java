@@ -22,8 +22,13 @@ public class Bruch {
             throw new RuntimeException(
                     "Bruch(zaehler, nenner) - nenner darf nicht 0 sein!");
         else {
-            this.zaehler = zaehler;
-            this.nenner = nenner;
+            if (this.zaehler < 0 && this.nenner < 0) {
+                this.zaehler = Math.abs(this.zaehler);
+                this.nenner = Math.abs(this.nenner);
+            } else {
+                this.zaehler = zaehler;
+                this.nenner = nenner;
+            }
             kuerze();
         }
     }
@@ -37,9 +42,10 @@ public class Bruch {
             if (this.zaehler < 0 && this.nenner < 0) {
                 this.zaehler = Math.abs(this.zaehler);
                 this.nenner = Math.abs(this.nenner);
+            } else {
+                this.zaehler = zaehler;
+                this.nenner = nenner;
             }
-            this.zaehler = zaehler;
-            this.nenner = nenner;
             this.ganze = ganze;
             kuerze();
         }
