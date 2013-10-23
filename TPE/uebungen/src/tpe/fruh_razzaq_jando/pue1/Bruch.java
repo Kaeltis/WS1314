@@ -22,13 +22,7 @@ public class Bruch {
             throw new RuntimeException(
                     "Bruch(zaehler, nenner) - nenner darf nicht 0 sein!");
         else {
-            if (this.zaehler < 0 && this.nenner < 0) {
-                this.zaehler = Math.abs(this.zaehler);
-                this.nenner = Math.abs(this.nenner);
-            } else {
-                this.zaehler = zaehler;
-                this.nenner = nenner;
-            }
+            checkDoppelMinus(zaehler, nenner);
             kuerze();
         }
     }
@@ -38,14 +32,7 @@ public class Bruch {
             throw new RuntimeException(
                     "Bruch(zaehler, nenner, ganze) - nenner darf nicht 0 sein!");
         else {
-            //Wenn Zähler und Nenner kleiner Null ist, wird Bruch positiv
-            if (this.zaehler < 0 && this.nenner < 0) {
-                this.zaehler = Math.abs(this.zaehler);
-                this.nenner = Math.abs(this.nenner);
-            } else {
-                this.zaehler = zaehler;
-                this.nenner = nenner;
-            }
+            checkDoppelMinus(zaehler, nenner);
             this.ganze = ganze;
             kuerze();
         }
@@ -70,6 +57,22 @@ public class Bruch {
     // ================================================================================
     // Methods
     // ================================================================================
+
+    /**
+     * Methode welche aus einem doppelten Minusbruch z.B. -3/-2 3/2 wird
+     * @param zaehler Vom Bruch der Zaehler
+     * @param nenner Vom Bruch der Nenner
+     */
+    private void checkDoppelMinus(long zaehler, long nenner) {
+        //Wenn Zähler und Nenner kleiner Null ist, wird Bruch positiv
+        if (this.zaehler < 0 && this.nenner < 0) {
+            this.zaehler = Math.abs(this.zaehler);
+            this.nenner = Math.abs(this.nenner);
+        } else {
+            this.zaehler = zaehler;
+            this.nenner = nenner;
+        }
+    }
 
     /**
      * Methode implementiert die Rechnung eines Bruches mit einer Potenz
