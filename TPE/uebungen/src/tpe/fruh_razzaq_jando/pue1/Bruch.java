@@ -33,6 +33,11 @@ public class Bruch {
             throw new RuntimeException(
                     "Bruch(zaehler, nenner, ganze) - nenner darf nicht 0 sein!");
         else {
+            //Wenn Zähler und Nenner kleiner Null ist, wird Bruch positiv
+            if (this.zaehler < 0 && this.nenner < 0) {
+                this.zaehler = Math.abs(this.zaehler);
+                this.nenner = Math.abs(this.nenner);
+            }
             this.zaehler = zaehler;
             this.nenner = nenner;
             this.ganze = ganze;

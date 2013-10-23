@@ -36,9 +36,7 @@ public class BruchTest {
     }
 
     public void testMinusMinus() {
-        Bruch bruch1 = new Bruch(-2, -3);
-
-
+        assertEquals(new Bruch(2, 3), new Bruch(-2, -3));
     }
 
     @Test
