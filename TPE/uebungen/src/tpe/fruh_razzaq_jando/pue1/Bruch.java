@@ -23,6 +23,7 @@ public class Bruch {
                     "Bruch(zaehler, nenner) - nenner darf nicht 0 sein!");
         else {
             checkDoppelMinus(zaehler, nenner);
+            //System.out.println(this.zaehler + " " + this.nenner);
             kuerze();
         }
     }
@@ -60,14 +61,15 @@ public class Bruch {
 
     /**
      * Methode welche aus einem doppelten Minusbruch z.B. -3/-2 3/2 wird
+     *
      * @param zaehler Vom Bruch der Zaehler
-     * @param nenner Vom Bruch der Nenner
+     * @param nenner  Vom Bruch der Nenner
      */
     private void checkDoppelMinus(long zaehler, long nenner) {
         //Wenn Zähler und Nenner kleiner Null ist, wird Bruch positiv
-        if (this.zaehler < 0 && this.nenner < 0) {
-            this.zaehler = Math.abs(this.zaehler);
-            this.nenner = Math.abs(this.nenner);
+        if (zaehler < 0 && nenner < 0) {
+            this.zaehler = Math.abs(zaehler);
+            this.nenner = Math.abs(nenner);
         } else {
             this.zaehler = zaehler;
             this.nenner = nenner;
