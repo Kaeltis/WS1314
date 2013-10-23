@@ -23,7 +23,6 @@ public class Bruch {
                     "Bruch(zaehler, nenner) - nenner darf nicht 0 sein!");
         else {
             checkDoppelMinus(zaehler, nenner);
-            //System.out.println(this.zaehler + " " + this.nenner);
             kuerze();
         }
     }
