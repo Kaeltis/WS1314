@@ -5,7 +5,7 @@ package tpe.fruh_razzaq_jando.pue1;
  *
  * @author TPE_UIB_01
  */
-public class Bruch {
+public class Bruch implements Cloneable{
 
     // ================================================================================
     // Properties
@@ -124,11 +124,12 @@ public class Bruch {
     }
 
     @Override
-    public Bruch clone() {
-        if (isEcht()) {
-            return new Bruch(this.ganze, this.zaehler, this.nenner);
-        } else {
-            return new Bruch(this.zaehler, this.nenner);
+    public Object clone() {
+        try{
+       return super.clone();
+        }catch (CloneNotSupportedException e){
+            // does not happen
+            return null;
         }
     }
 
@@ -261,7 +262,7 @@ public class Bruch {
      * Unechter Bruch z.B. 1 3/4
      */
     public Bruch echterBruch() {
-        Bruch neuerBruch = this.clone();
+        Bruch neuerBruch = (Bruch)this.clone();
         while (neuerBruch.zaehler > neuerBruch.nenner) {
             neuerBruch.ganze++;
             neuerBruch.zaehler -= neuerBruch.nenner;
@@ -337,5 +338,7 @@ public class Bruch {
         result = 31 * result + (int) (ganze ^ (ganze >>> 32));
         return result;
     }
+
+
 
 }
