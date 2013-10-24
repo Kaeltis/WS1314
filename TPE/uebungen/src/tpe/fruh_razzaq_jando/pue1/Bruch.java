@@ -109,6 +109,7 @@ public class Bruch implements Cloneable{
     public boolean isEcht() {
         return (this.ganze != 0); // Nur wenn der Bruch einen ganzzahligen Anteil besitzt ist er echt 
     }
+    /* Commit bug*/
 
     /**
      * Methode liefert zu einem Bruch den Kehrwert Bsp (1/2 = 2/1)
