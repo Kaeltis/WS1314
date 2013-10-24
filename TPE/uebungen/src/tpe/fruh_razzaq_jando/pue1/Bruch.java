@@ -111,8 +111,8 @@ public class Bruch implements Cloneable {
 	 * @return Einen Boolean ob der Bruch Echt ist.
 	 */
 	public boolean isEcht() {
-		return (this.ganze != 0); // Nur wenn der Bruch einen ganzzahligen
-									// Anteil besitzt ist er echt
+		// Nur wenn der Bruch einen ganzzahligen Anteil besitzt ist er echt
+		return (this.ganze != 0);
 	}
 
 	/**
@@ -208,8 +208,8 @@ public class Bruch implements Cloneable {
 		Bruch tmpBruch2 = zweiterBruch.unechterBruch();
 		Bruch ergebnisBruch;
 
-		if (tmpBruch1.isEcht() || tmpBruch2.isEcht()) { // War einer der beiden
-														// Brüche vorher echt?
+		// War einer der beiden Brüche vorher echt?
+		if (tmpBruch1.isEcht() || tmpBruch2.isEcht()) {
 			echt = true;
 		}
 
@@ -316,8 +316,8 @@ public class Bruch implements Cloneable {
 		if (zaehler % aktuelleZahl == 0 && nenner % aktuelleZahl == 0)
 			return aktuelleZahl;
 		else
-			return getGGT(aktuelleZahl - 1); // Rekursiver Aufruf, mache das
-												// Problem kleiner
+			// Rekursiver Aufruf, mache das Problem kleiner
+			return getGGT(aktuelleZahl - 1);
 	}
 
 	/**
