@@ -6,6 +6,7 @@ package tpe.fruh_razzaq_jando.pue1;
  * @author TPE_UIB_01
  */
 public class Bruch implements Cloneable {
+    public static final int HASHSHIFT = 32;
 
     // ================================================================================
     // Properties
@@ -371,9 +372,9 @@ public class Bruch implements Cloneable {
      */
     @Override
     public int hashCode() {
-        int result = (int) (nenner ^ (nenner >>> 32));
-        result = 31 * result + (int) (zaehler ^ (zaehler >>> 32));
-        result = 31 * result + (int) (ganze ^ (ganze >>> 32));
+        int result = (int) (nenner ^ (nenner >>> HASHSHIFT));
+        result = 31 * result + (int) (zaehler ^ (zaehler >>> HASHSHIFT));
+        result = 31 * result + (int) (ganze ^ (ganze >>> HASHSHIFT));
         return result;
     }
 
