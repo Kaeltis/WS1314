@@ -1,7 +1,6 @@
 package tpe.fruh_razzaq_jando.pue1;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class BruchTest {
