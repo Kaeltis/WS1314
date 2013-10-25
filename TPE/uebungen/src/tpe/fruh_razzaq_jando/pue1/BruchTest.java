@@ -1,6 +1,7 @@
 package tpe.fruh_razzaq_jando.pue1;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 public class BruchTest {
@@ -100,6 +101,13 @@ public class BruchTest {
     public void testHashCode() {
         assertEquals(new Bruch(3, 4, 5).hashCode(), new Bruch(3, 4, 5).hashCode());
         assertEquals(new Bruch(4, 5).hashCode(), new Bruch(4, 5).hashCode());
+    }
+
+    @Test
+    public void testExtreme() {
+        assertEquals(new Bruch(0, 1, 5), new Bruch(1, 5).echterBruch());
+        //assertEquals("3", new Bruch(9, 3).toString());
+        //assertEquals(new Bruch(-18, 5), new Bruch(-1,5).addiere(new Bruch(-17, 5)));
     }
 
 }
