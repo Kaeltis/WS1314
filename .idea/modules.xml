@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OOT/OOT.iml" filepath="$PROJECT_DIR$/OOT/OOT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spielwiese/Spielwiese.iml" filepath="$PROJECT_DIR$/Spielwiese/Spielwiese.iml" />
       <module fileurl="file://$PROJECT_DIR$/TPE/TPE.iml" filepath="$PROJECT_DIR$/TPE/TPE.iml" />
     </modules>
   </component>
