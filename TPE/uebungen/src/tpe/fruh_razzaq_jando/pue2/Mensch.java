@@ -11,4 +11,11 @@ public abstract class Mensch extends Einwohner {
     public int getAlter() {
         return alter;
     }
+
+    @Override
+    public String toString() {
+        return "Mensch{" +
+                "alter=" + alter +
+                "} " + super.toString();
+    }
 }

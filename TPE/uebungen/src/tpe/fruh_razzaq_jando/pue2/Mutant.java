@@ -13,4 +13,11 @@ public abstract class Mutant extends Einwohner {
     }
 
     public abstract boolean kaempfe(Mutant m);
+
+    @Override
+    public String toString() {
+        return "Mutant{" +
+                "mutation='" + mutation + '\'' +
+                "} " + super.toString();
+    }
 }

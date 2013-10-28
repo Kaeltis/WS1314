@@ -12,7 +12,14 @@ public class Richter extends Mensch {
         return korrupt;
     }
 
-    public boolean verurteilen(Schurke s) {
-        return true;
+    public boolean verurteilen() {
+        return !isKorrupt();
+    }
+
+    @Override
+    public String toString() {
+        return "Richter{" +
+                "korrupt=" + korrupt +
+                "} " + super.toString();
     }
 }

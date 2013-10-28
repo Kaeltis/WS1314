@@ -29,4 +29,11 @@ public class Personengesellschaft extends Unternehmen implements Einkommensteuer
             return 0;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Personengesellschaft{" +
+                "inhaber=" + inhaber +
+                "} " + super.toString();
+    }
 }

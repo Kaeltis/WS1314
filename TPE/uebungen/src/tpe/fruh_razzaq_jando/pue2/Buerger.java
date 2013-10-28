@@ -10,4 +10,5 @@ public class Buerger extends Mensch implements Einkommensteuer {
     public int berechneEinkommensteuer() {
         return 0;  //TODO Implement  berechneEinkommensteuer()
     }
+
 }

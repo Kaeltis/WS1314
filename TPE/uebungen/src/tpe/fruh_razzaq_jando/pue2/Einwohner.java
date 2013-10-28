@@ -16,4 +16,12 @@ public abstract class Einwohner {
     public double getEinkommen() {
         return einkommen;
     }
+
+    @Override
+    public String toString() {
+        return "Einwohner{" +
+                "name='" + name + '\'' +
+                ", einkommen=" + einkommen +
+                '}';
+    }
 }

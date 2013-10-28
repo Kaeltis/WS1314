@@ -23,4 +23,11 @@ public class Kapitalgesellschaft extends Unternehmen implements Koerperschaftste
     public int berechneGewerbesteuer() {
         return (this.getGewinn() / 100) * 10;
     }
+
+    @Override
+    public String toString() {
+        return "Kapitalgesellschaft{" +
+                "gesellschafter=" + gesellschafter +
+                "} " + super.toString();
+    }
 }
