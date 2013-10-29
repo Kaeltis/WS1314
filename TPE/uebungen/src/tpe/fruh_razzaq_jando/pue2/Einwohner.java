@@ -13,7 +13,7 @@ public abstract class Einwohner {
         return this.name;
     }
 
-    public double getEinkommen() {
+    public int getEinkommen() {
         return einkommen;
     }
 
