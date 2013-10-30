@@ -9,6 +9,7 @@ public class Syndikat implements Koerperschaftsteuer {
     public Syndikat(String name, LinkedList<Schurke> mitglieder) {
         this.name = name;
         this.mitglieder = mitglieder;
+        Finanzamt.addKoerperschaftsteuerpflichtig(this);
     }
 
     public String getName() {

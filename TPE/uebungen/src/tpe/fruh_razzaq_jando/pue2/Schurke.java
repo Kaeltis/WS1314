@@ -6,6 +6,7 @@ public class Schurke extends Mutant implements Einkommensteuer {
     public Schurke(String name, int einkommen, String mutation, Superkraft superkraft) {
         super(name, einkommen, mutation);
         this.superkraft = superkraft;
+        Finanzamt.addEinkommensteuerpflichtig(this);
     }
 
     public Superkraft getSuperkraft() {

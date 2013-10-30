@@ -8,6 +8,8 @@ public class Kapitalgesellschaft extends Unternehmen implements Koerperschaftste
     public Kapitalgesellschaft(String name, int gewinn, LinkedList<Buerger> gesellschafter) {
         super(name, gewinn);
         this.gesellschafter = gesellschafter;
+        Finanzamt.addKoerperschaftsteuerpflichtig(this);
+        Finanzamt.addGewerbesteuerpflichtig(this);
     }
 
     public LinkedList<Buerger> getGesellschafter() {

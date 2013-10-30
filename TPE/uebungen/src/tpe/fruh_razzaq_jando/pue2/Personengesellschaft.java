@@ -9,6 +9,8 @@ public class Personengesellschaft extends Unternehmen implements Einkommensteuer
     public Personengesellschaft(String name, int gewinn, LinkedList<Buerger> inhaber) {
         super(name, gewinn);
         this.inhaber = inhaber;
+        Finanzamt.addEinkommensteuerpflichtig(this);
+        Finanzamt.addGewerbesteuerpflichtig(this);
     }
 
     public LinkedList<Buerger> getInhaber() {

@@ -4,6 +4,7 @@ public class Buerger extends Mensch implements Einkommensteuer {
 
     public Buerger(String name, int einkommen, int alter) {
         super(name, einkommen, alter);
+        Finanzamt.addEinkommensteuerpflichtig(this);
     }
 
     @Override

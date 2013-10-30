@@ -1,8 +1,8 @@
 package tpe.fruh_razzaq_jando.pue2;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class MetropolisTest {
 
@@ -21,7 +21,13 @@ public class MetropolisTest {
         assertEquals(43000, new Buerger("Heinz", 140000, 26).berechneEinkommensteuer());
         assertEquals(48000, new Buerger("Heinz", 150000, 26).berechneEinkommensteuer());
         assertEquals(73000, new Buerger("Heinz", 200000, 26).berechneEinkommensteuer());
-}
+    }
 
+    @Test
+    public void simulationsTest() {
+        Buerger manfred = new Buerger("Manfred", 1000, 23);
+        Schurke diabolus = new Schurke("Diabolus", 10000, "Böse sein", Superkraft.Hadoken);
 
+        System.out.println(Finanzamt.berechneEinkommenssteuer());
+    }
 }
