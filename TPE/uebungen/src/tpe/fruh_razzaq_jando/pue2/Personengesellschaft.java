@@ -19,26 +19,7 @@ public class Personengesellschaft extends Unternehmen implements Einkommensteuer
 
     @Override
     public int berechneEinkommensteuer() {
-        int gewinn = this.getGewinn();
-        int steuer = 0;
-        if (gewinn > Konstanten.ONEHUNDREDTWENTYTHOUSAND) {
-            steuer += ((gewinn - Konstanten.ONEHUNDREDTWENTYTHOUSAND) / 100) * 50;
-            gewinn -= (gewinn - Konstanten.ONEHUNDREDTWENTYTHOUSAND);
-        }
-        if (gewinn > Konstanten.SIXTYTHOUSAND) {
-            steuer += ((gewinn - Konstanten.SIXTYTHOUSAND) / 100) * 35;
-            gewinn -= (gewinn - Konstanten.SIXTYTHOUSAND);
-        }
-        if (gewinn > Konstanten.TWENTYTHOUSAND) {
-            steuer += (((gewinn - Konstanten.TWENTYTHOUSAND) / 100) * 25);
-            gewinn -= (gewinn - Konstanten.TWENTYTHOUSAND);
-        }
-        if (gewinn > Konstanten.ZERO) {
-            steuer += (gewinn / 100) * 10;
-            gewinn -= gewinn;
-        }
-
-        return steuer;
+        return EinkommensteuerHelfer.berechneEinkommensteuer(this.getGewinn());
     }
 
     @Override

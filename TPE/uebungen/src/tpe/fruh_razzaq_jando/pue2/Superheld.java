@@ -16,10 +16,10 @@ public class Superheld extends Mutant {
 
     @Override
     public boolean kaempfe(Mutant m) {
-        if (m instanceof Superheld) {
-            throw new IllegalArgumentException("Superheld darf nicht gegen einen anderen Superhelden kämpfen!");
+        if (m instanceof Schurke) {
+            return m.kaempfe(this);
         } else {
-            return !this.getSuperkraefte().contains(((Schurke) m).getSuperkraft());
+            throw new IllegalArgumentException("Superheld darf nicht gegen einen anderen Superhelden kämpfen!");
         }
     }
 }

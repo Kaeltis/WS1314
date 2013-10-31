@@ -3,9 +3,9 @@ package tpe.fruh_razzaq_jando.pue2;
 import java.util.LinkedList;
 
 public class Finanzamt {
-    private static LinkedList<Einkommensteuer> einkommensteuerList = new LinkedList<Einkommensteuer>();
-    private static LinkedList<Koerperschaftsteuer> koerperschaftsteuerList = new LinkedList<Koerperschaftsteuer>();
-    private static LinkedList<Gewerbesteuer> gewerbesteuerList = new LinkedList<Gewerbesteuer>();
+    private static final LinkedList<Einkommensteuer> einkommensteuerList = new LinkedList<Einkommensteuer>();
+    private static final LinkedList<Koerperschaftsteuer> koerperschaftsteuerList = new LinkedList<Koerperschaftsteuer>();
+    private static final LinkedList<Gewerbesteuer> gewerbesteuerList = new LinkedList<Gewerbesteuer>();
 
     public static void addEinkommensteuerpflichtig(Einkommensteuer e) {
         einkommensteuerList.add(e);

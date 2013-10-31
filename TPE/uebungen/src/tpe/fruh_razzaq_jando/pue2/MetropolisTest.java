@@ -23,11 +23,5 @@ public class MetropolisTest {
         assertEquals(73000, new Buerger("Heinz", 200000, 26).berechneEinkommensteuer());
     }
 
-    @Test
-    public void simulationsTest() {
-        Buerger manfred = new Buerger("Manfred", 1000, 23);
-        Schurke diabolus = new Schurke("Diabolus", 10000, "Böse sein", Superkraft.Hadoken);
 
-        System.out.println(Finanzamt.berechneEinkommenssteuer());
-    }
 }

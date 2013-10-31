@@ -7,28 +7,8 @@ public class Buerger extends Mensch implements Einkommensteuer {
         Finanzamt.addEinkommensteuerpflichtig(this);
     }
 
-    @Override
     public int berechneEinkommensteuer() {
-        int einkommen = this.getEinkommen();
-        int steuer = 0;
-        if (einkommen > Konstanten.ONEHUNDREDTWENTYTHOUSAND) {
-            steuer += ((einkommen - Konstanten.ONEHUNDREDTWENTYTHOUSAND) / 100) * 50;
-            einkommen -= (einkommen - Konstanten.ONEHUNDREDTWENTYTHOUSAND);
-        }
-        if (einkommen > Konstanten.SIXTYTHOUSAND) {
-            steuer += ((einkommen - Konstanten.SIXTYTHOUSAND) / 100) * 35;
-            einkommen -= (einkommen - Konstanten.SIXTYTHOUSAND);
-        }
-        if (einkommen > Konstanten.TWENTYTHOUSAND) {
-            steuer += (((einkommen - Konstanten.TWENTYTHOUSAND) / 100) * 25);
-            einkommen -= (einkommen - Konstanten.TWENTYTHOUSAND);
-        }
-        if (einkommen > Konstanten.ZERO) {
-            steuer += (einkommen / 100) * 10;
-            einkommen -= einkommen;
-        }
-
-        return steuer;
+        return EinkommensteuerHelfer.berechneEinkommensteuer(this.getEinkommen());
     }
 
 
