@@ -1,9 +1,10 @@
 package tpe.fruh_razzaq_jando.pue2;
 
 import java.util.LinkedList;
+import static tpe.fruh_razzaq_jando.pue2.Konstanten.*;
 
 public class Personengesellschaft extends Unternehmen implements Einkommensteuer, Gewerbesteuer {
-    public static final int GEWERBESTEUERABZUG = 1000;
+
     private LinkedList<Buerger> inhaber = new LinkedList<Buerger>();
 
     public Personengesellschaft(String name, int gewinn, LinkedList<Buerger> inhaber) {
