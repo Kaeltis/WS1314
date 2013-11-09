@@ -2,6 +2,8 @@ package tpe.fruh_razzaq_jando.pue2;
 
 import org.junit.Test;
 
+import java.util.LinkedList;
+
 import static org.junit.Assert.assertEquals;
 
 public class MetropolisTest {
@@ -21,6 +23,19 @@ public class MetropolisTest {
         assertEquals(43000, new Buerger("Heinz", 140000, 26).berechneEinkommensteuer());
         assertEquals(48000, new Buerger("Heinz", 150000, 26).berechneEinkommensteuer());
         assertEquals(73000, new Buerger("Heinz", 200000, 26).berechneEinkommensteuer());
+    }
+
+    @Test
+    public void testRichter() {
+        assertEquals(true, new Richter("Karl-Heinz", 120000, 42, false).verurteilen());
+    }
+
+    @Test
+    public void testKampf(){
+        LinkedList<Superkraft> superkraefte =  new LinkedList<Superkraft>();
+        superkraefte.add(Superkraft.Blitzewerfen);
+        superkraefte.add(Superkraft.Hadoken);
+        assertEquals(false, new Superheld("Superman", 120000, "Muskeln" ,superkraefte).kaempfe(new Schurke("Atermis Etreri", 500, "DoppelDolchHand", Superkraft.Sturmkraft)));
     }
 
 
