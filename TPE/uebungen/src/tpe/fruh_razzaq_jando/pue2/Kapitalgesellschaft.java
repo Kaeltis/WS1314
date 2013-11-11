@@ -1,5 +1,6 @@
 package tpe.fruh_razzaq_jando.pue2;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 /**
@@ -16,13 +17,15 @@ public class Kapitalgesellschaft extends Unternehmen implements Koerperschaftste
     /**
      * Konstruktor der Klasse Kapitalgesellschaft
      *
-     * @param name           Nsme der Kapitalgesellschaft
-     * @param gewinn         Gewinn der Kapitalgesellschaft
-     * @param gesellschafter Liste der Gesellschafter(Buerger)
+     * @param name                  Nsme der Kapitalgesellschaft
+     * @param gewinn                Gewinn der Kapitalgesellschaft
+     * @param pflichtGesellschafter Pflichtgesellschafter des Gesellschafter
+     * @param gesellschafter        Weitere Gesellschafter(Buerger)
      */
-    public Kapitalgesellschaft(String name, int gewinn, LinkedList<Buerger> gesellschafter) {
+    public Kapitalgesellschaft(String name, int gewinn, Buerger pflichtGesellschafter, Buerger... gesellschafter) {
         super(name, gewinn);
-        this.gesellschafter = gesellschafter;
+        this.gesellschafter.add(pflichtGesellschafter);
+        Collections.addAll(this.gesellschafter, gesellschafter);
         Finanzamt.addKoerperschaftsteuerpflichtig(this);
         Finanzamt.addGewerbesteuerpflichtig(this);
     }

@@ -1,5 +1,6 @@
 package tpe.fruh_razzaq_jando.pue2;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 /**
@@ -23,9 +24,10 @@ public class Syndikat implements Koerperschaftsteuer {
      * @param name       Names des Syndikats
      * @param mitglieder Mitglieder des Syndikats
      */
-    public Syndikat(String name, LinkedList<Schurke> mitglieder) {
+    public Syndikat(String name, Schurke pflichtSchurke, Schurke... mitglieder) {
         this.name = name;
-        this.mitglieder = mitglieder;
+        this.mitglieder.add(pflichtSchurke);
+        Collections.addAll(this.mitglieder, mitglieder);
         Finanzamt.addKoerperschaftsteuerpflichtig(this);
     }
 

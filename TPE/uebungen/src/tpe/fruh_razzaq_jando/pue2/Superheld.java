@@ -1,5 +1,6 @@
 package tpe.fruh_razzaq_jando.pue2;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 /**
@@ -15,16 +16,18 @@ public class Superheld extends Mutant {
     private LinkedList<Superkraft> superkraefte = new LinkedList<Superkraft>();
 
     /**
-     * Konstruktor der Klasse Superheld
+     * Konstruktor des Superhelden
      *
-     * @param name         Name des Superhelden
-     * @param einkommen    Einkommen des Superhelden
-     * @param mutation     Mutation des Superhelden
-     * @param superkraefte Superkräfte des Superhelden
+     * @param name              Name des Helden
+     * @param einkommen         Einkommen des Helden
+     * @param mutation          Mutation des Helden
+     * @param pflichtSuperkraft Pflichtsuperkraft des Helden
+     * @param superkraefte      Weitere Superkräfte des Helden
      */
-    public Superheld(String name, int einkommen, String mutation, LinkedList<Superkraft> superkraefte) {
+    public Superheld(String name, int einkommen, String mutation, Superkraft pflichtSuperkraft, Superkraft... superkraefte) {
         super(name, einkommen, mutation);
-        this.superkraefte = superkraefte;
+        this.superkraefte.add(pflichtSuperkraft);
+        Collections.addAll(this.superkraefte, superkraefte);
     }
 
     /**

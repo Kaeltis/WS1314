@@ -1,5 +1,6 @@
 package tpe.fruh_razzaq_jando.pue2;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 import static tpe.fruh_razzaq_jando.pue2.Konstanten.GEWERBESTEUERABZUG;
@@ -21,9 +22,10 @@ public class Personengesellschaft extends Unternehmen implements Einkommensteuer
      * @param gewinn  Gewinn der der Personengesellschaft
      * @param inhaber Inhaber der Personengesellschaft
      */
-    public Personengesellschaft(String name, int gewinn, LinkedList<Buerger> inhaber) {
+    public Personengesellschaft(String name, int gewinn, Buerger pflichtInhaber, Buerger... inhaber) {
         super(name, gewinn);
-        this.inhaber = inhaber;
+        this.inhaber.add(pflichtInhaber);
+        Collections.addAll(this.inhaber, inhaber);
         Finanzamt.addEinkommensteuerpflichtig(this);
         Finanzamt.addGewerbesteuerpflichtig(this);
     }
