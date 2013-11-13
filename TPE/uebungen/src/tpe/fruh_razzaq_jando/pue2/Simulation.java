@@ -5,6 +5,7 @@ import tpe.fruh_razzaq_jando.pue2.einwohner.Richter;
 import tpe.fruh_razzaq_jando.pue2.einwohner.Schurke;
 import tpe.fruh_razzaq_jando.pue2.einwohner.Superheld;
 import tpe.fruh_razzaq_jando.pue2.helper.Superkraft;
+import tpe.fruh_razzaq_jando.pue2.steuern.Finanzamt;
 import tpe.fruh_razzaq_jando.pue2.unternehmen.Kapitalgesellschaft;
 import tpe.fruh_razzaq_jando.pue2.unternehmen.Personengesellschaft;
 import tpe.fruh_razzaq_jando.pue2.unternehmen.Syndikat;
@@ -39,8 +40,15 @@ public class Simulation {
 
         System.out.println(metropolis.simulationKampf(5));
         System.out.println(metropolis.simulationVerurteilen());
+        System.out.println(metropolis.simulationSteuern());
+    }
 
-
+    private String simulationSteuern() {
+        String output = "##### Steuerberechnung-Simulation #####\n\n";
+        output += "Berechnete Einkommensteuer: " + Finanzamt.berechneEinkommensteuer() + " M$\n";
+        output += "Berechnete Gewerbesteuer: " + Finanzamt.berechneGewerbesteuer() + " M$\n";
+        output += "Berechnete Körperschaftsteuer: " + Finanzamt.berechneKoerperschaftsteuer() + " M$";
+        return output;
     }
 
     private int randomElement(int laenge) {
