@@ -9,15 +9,14 @@ import tpe.fruh_razzaq_jando.pue2.helper.Superkraft;
 import tpe.fruh_razzaq_jando.pue2.unternehmen.Kapitalgesellschaft;
 import tpe.fruh_razzaq_jando.pue2.unternehmen.Syndikat;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class MetropolisTest {
 
     @Test
     public void testRichter() {
-        assertEquals(true, new Richter("Karl-Heinz", 120000, 42, false).verurteilen());
-        assertEquals(false, new Richter("Karl-Heinz-Bösewicht", 1520000, 24, true).verurteilen());
+        assertTrue(new Richter("Karl-Heinz", 120000, 42, false).verurteilen());
+        assertFalse(new Richter("Karl-Heinz-Bösewicht", 1520000, 24, true).verurteilen());
     }
 
     @Test
