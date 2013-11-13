@@ -52,7 +52,7 @@ public class Simulation {
     }
 
     /**
-     * Debugmethode zur Ausgabe aller Felder                     s
+     * Debugmethode zur Ausgabe aller Felder
      *
      * @return String aller Felder
      */
