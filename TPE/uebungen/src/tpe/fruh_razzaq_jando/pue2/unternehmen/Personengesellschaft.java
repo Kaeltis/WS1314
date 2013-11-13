@@ -1,9 +1,15 @@
-package tpe.fruh_razzaq_jando.pue2;
+package tpe.fruh_razzaq_jando.pue2.unternehmen;
+
+import tpe.fruh_razzaq_jando.pue2.einwohner.Buerger;
+import tpe.fruh_razzaq_jando.pue2.helper.EinkommensteuerHelfer;
+import tpe.fruh_razzaq_jando.pue2.steuern.Einkommensteuer;
+import tpe.fruh_razzaq_jando.pue2.steuern.Finanzamt;
+import tpe.fruh_razzaq_jando.pue2.steuern.Gewerbesteuer;
 
 import java.util.Collections;
 import java.util.LinkedList;
 
-import static tpe.fruh_razzaq_jando.pue2.Konstanten.GEWERBESTEUERABZUG;
+import static tpe.fruh_razzaq_jando.pue2.helper.Konstanten.GEWERBESTEUERABZUG;
 
 /**
  * Klasse um eine Personengesellschaft zu implementieren

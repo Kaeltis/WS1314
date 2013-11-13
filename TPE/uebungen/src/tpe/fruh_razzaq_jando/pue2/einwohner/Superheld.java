@@ -1,4 +1,6 @@
-package tpe.fruh_razzaq_jando.pue2;
+package tpe.fruh_razzaq_jando.pue2.einwohner;
+
+import tpe.fruh_razzaq_jando.pue2.helper.Superkraft;
 
 import java.util.Collections;
 import java.util.LinkedList;

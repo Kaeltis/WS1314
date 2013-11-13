@@ -1,4 +1,9 @@
-package tpe.fruh_razzaq_jando.pue2;
+package tpe.fruh_razzaq_jando.pue2.einwohner;
+
+import tpe.fruh_razzaq_jando.pue2.helper.EinkommensteuerHelfer;
+import tpe.fruh_razzaq_jando.pue2.helper.Superkraft;
+import tpe.fruh_razzaq_jando.pue2.steuern.Einkommensteuer;
+import tpe.fruh_razzaq_jando.pue2.steuern.Finanzamt;
 
 /**
  * Klasse um einen Schurken zu implementieren
@@ -7,7 +12,7 @@ package tpe.fruh_razzaq_jando.pue2;
  */
 public class Schurke extends Mutant implements Einkommensteuer {
     /**
-     * Membervarialbed um die Superkraft eines Schurken zu verwalten
+     * Membervariable um die Superkraft eines Schurken zu verwalten
      */
     private Superkraft superkraft;
 

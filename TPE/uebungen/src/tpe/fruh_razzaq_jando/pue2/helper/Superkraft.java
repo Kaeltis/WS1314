@@ -1,4 +1,4 @@
-package tpe.fruh_razzaq_jando.pue2;
+package tpe.fruh_razzaq_jando.pue2.helper;
 
 /**
  * Enumeration Klasse um Superkräfte zu vewalten

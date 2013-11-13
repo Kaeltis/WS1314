@@ -1,8 +1,14 @@
 package tpe.fruh_razzaq_jando.pue2;
 
 import org.junit.Test;
+import tpe.fruh_razzaq_jando.pue2.einwohner.Buerger;
+import tpe.fruh_razzaq_jando.pue2.einwohner.Richter;
+import tpe.fruh_razzaq_jando.pue2.einwohner.Schurke;
+import tpe.fruh_razzaq_jando.pue2.einwohner.Superheld;
+import tpe.fruh_razzaq_jando.pue2.helper.Superkraft;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class MetropolisTest {
 
@@ -28,13 +34,18 @@ public class MetropolisTest {
         assertEquals(true, new Richter("Karl-Heinz", 120000, 42, false).verurteilen());
     }
 
-    /*
+    @Test
     public void testKampf() {
-        LinkedList<Superkraft> superkraefte = new LinkedList<Superkraft>();
-        superkraefte.add(Superkraft.Blitzewerfen);
-        superkraefte.add(Superkraft.Hadoken);
-        assertEquals(false, new Superheld("Superman", 120000, "Muskeln", superkraefte).kaempfe(new Schurke("Atermis Etreri", 500, "DoppelDolchHand", Superkraft.Sturmkraft)));
+        assertTrue(new Superheld("Superman", 120000, "Muskeln", Superkraft.Hadoken, Superkraft.Blitzewerfen).kaempfe(
+                new Schurke("Atermis Etreri", 500, "DoppelDolchHand", Superkraft.Sturmkraft)));
+        assertTrue(new Schurke("Schurke1", 234565, "Dolchhand", Superkraft.Hadoken).kaempfe(
+                new Superheld("Suuuupermann", 234345, "Fliegen", Superkraft.Blitzewerfen, Superkraft.Kaioken)));
     }
-      */
+
+    @Test
+    public void testSyndikatAnzahl() {
+        //Schurke schurke = new Schurke("TestSchurke", )
+    }
+
 
 }

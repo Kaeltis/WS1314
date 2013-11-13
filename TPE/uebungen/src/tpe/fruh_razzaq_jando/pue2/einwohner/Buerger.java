@@ -1,4 +1,8 @@
-package tpe.fruh_razzaq_jando.pue2;
+package tpe.fruh_razzaq_jando.pue2.einwohner;
+
+import tpe.fruh_razzaq_jando.pue2.helper.EinkommensteuerHelfer;
+import tpe.fruh_razzaq_jando.pue2.steuern.Einkommensteuer;
+import tpe.fruh_razzaq_jando.pue2.steuern.Finanzamt;
 
 /**
  * Klasse Buerger, welche einen Buerger implementiert

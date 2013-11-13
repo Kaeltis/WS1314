@@ -1,4 +1,9 @@
-package tpe.fruh_razzaq_jando.pue2;
+package tpe.fruh_razzaq_jando.pue2.unternehmen;
+
+import tpe.fruh_razzaq_jando.pue2.einwohner.Buerger;
+import tpe.fruh_razzaq_jando.pue2.steuern.Finanzamt;
+import tpe.fruh_razzaq_jando.pue2.steuern.Gewerbesteuer;
+import tpe.fruh_razzaq_jando.pue2.steuern.Koerperschaftsteuer;
 
 import java.util.Collections;
 import java.util.LinkedList;

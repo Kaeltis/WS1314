@@ -1,5 +1,14 @@
 package tpe.fruh_razzaq_jando.pue2;
 
+import tpe.fruh_razzaq_jando.pue2.einwohner.Buerger;
+import tpe.fruh_razzaq_jando.pue2.einwohner.Richter;
+import tpe.fruh_razzaq_jando.pue2.einwohner.Schurke;
+import tpe.fruh_razzaq_jando.pue2.einwohner.Superheld;
+import tpe.fruh_razzaq_jando.pue2.helper.Superkraft;
+import tpe.fruh_razzaq_jando.pue2.unternehmen.Kapitalgesellschaft;
+import tpe.fruh_razzaq_jando.pue2.unternehmen.Personengesellschaft;
+import tpe.fruh_razzaq_jando.pue2.unternehmen.Syndikat;
+
 import java.util.LinkedList;
 import java.util.Random;
 

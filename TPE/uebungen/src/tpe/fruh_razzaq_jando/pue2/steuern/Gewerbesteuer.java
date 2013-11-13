@@ -1,4 +1,4 @@
-package tpe.fruh_razzaq_jando.pue2;
+package tpe.fruh_razzaq_jando.pue2.steuern;
 
 /**
  * Interface zur Implementierung einer Gewerbesteuer

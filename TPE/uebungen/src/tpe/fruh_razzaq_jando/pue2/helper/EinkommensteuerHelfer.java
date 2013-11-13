@@ -1,6 +1,6 @@
-package tpe.fruh_razzaq_jando.pue2;
+package tpe.fruh_razzaq_jando.pue2.helper;
 
-import static tpe.fruh_razzaq_jando.pue2.Konstanten.*;
+import static tpe.fruh_razzaq_jando.pue2.helper.Konstanten.*;
 
 /**
  * Abstrakte Klasse um die Einkommensteuer der Verwender  des Interfaces Einkommenssteuer zu berechnen
