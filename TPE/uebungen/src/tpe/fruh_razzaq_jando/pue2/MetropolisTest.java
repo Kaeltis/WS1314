@@ -6,6 +6,8 @@ import tpe.fruh_razzaq_jando.pue2.einwohner.Richter;
 import tpe.fruh_razzaq_jando.pue2.einwohner.Schurke;
 import tpe.fruh_razzaq_jando.pue2.einwohner.Superheld;
 import tpe.fruh_razzaq_jando.pue2.helper.Superkraft;
+import tpe.fruh_razzaq_jando.pue2.unternehmen.Kapitalgesellschaft;
+import tpe.fruh_razzaq_jando.pue2.unternehmen.Syndikat;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -44,7 +46,18 @@ public class MetropolisTest {
 
     @Test
     public void testSyndikatAnzahl() {
-        //Schurke schurke = new Schurke("TestSchurke", )
+        Schurke schurke = new Schurke("TestSchurke", 234345, "Dolchhand", Superkraft.Blitzewerfen);
+        Syndikat syndikat = new Syndikat("TestSyndikat", schurke, schurke, schurke, schurke);
+        assertEquals(4, syndikat.getMitglieder().size());
+    }
+
+    @Test
+    public void testGewerbeSteuer() {
+        Buerger gesellschafter = new Buerger("TestBuerger", 10000, 23);
+        Kapitalgesellschaft kpg = new Kapitalgesellschaft("TestUnternehmen", 10000, gesellschafter,
+                gesellschafter, gesellschafter);
+        kpg.berechneGewerbesteuer();
+        assertEquals(1000, kpg.berechneGewerbesteuer());
     }
 
 
