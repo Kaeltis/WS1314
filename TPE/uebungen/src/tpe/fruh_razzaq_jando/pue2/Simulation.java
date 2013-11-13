@@ -47,11 +47,12 @@ public class Simulation {
         System.out.println(metropolis.simulationVerurteilen());
         System.out.println(metropolis.simulationSteuern());
 
+        //DEBUG Ausgabe
         //System.out.println(metropolis.printAll());
     }
 
     /**
-     * Debugmethode zur Ausgabe aller Felder
+     * Debugmethode zur Ausgabe aller Felder                     s
      *
      * @return String aller Felder
      */
