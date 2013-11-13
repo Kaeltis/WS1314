@@ -40,6 +40,7 @@ public class Simulation {
         System.out.println(metropolis.simulationKampf(5));
         System.out.println(metropolis.simulationVerurteilen());
 
+
     }
 
     private int randomElement(int laenge) {
