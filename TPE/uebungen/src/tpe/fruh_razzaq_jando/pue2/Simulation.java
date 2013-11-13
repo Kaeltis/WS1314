@@ -28,6 +28,11 @@ public class Simulation {
     private Richter braverRichter;
     private Richter korrupterRichter;
 
+    /**
+     * Main Methode und Aufrufe aller anderen Methoden
+     *
+     * @param args Kommandozeilenparameter - wird nicht benutzt
+     */
     public static void main(String[] args) {
         Simulation metropolis = new Simulation();
         System.out.println("Metropolis Simulation\n---------------------");
@@ -41,8 +46,25 @@ public class Simulation {
         System.out.println(metropolis.simulationKampf(5));
         System.out.println(metropolis.simulationVerurteilen());
         System.out.println(metropolis.simulationSteuern());
+
+        //System.out.println(metropolis.printAll());
     }
 
+    /**
+     * Debugmethode zur Ausgabe aller Felder
+     *
+     * @return String aller Felder
+     */
+    private String printAll() {
+        return schurken.toString() + "\n\n" + superhelden.toString() + "\n\n" + kgs.toString() + "\n\n" + pgs.toString() + "\n\n"
+                + syndikat.toString() + "\n\n" + braverRichter.toString() + "\n\n" + korrupterRichter.toString();
+    }
+
+    /**
+     * Methode um die Steuerberechung zu simulieren
+     *
+     * @return String des Ergebnisses der Steuerberechnungen.
+     */
     private String simulationSteuern() {
         String output = "##### Steuerberechnung-Simulation #####\n\n";
         output += "Berechnete Einkommensteuer: " + Finanzamt.berechneEinkommensteuer() + " M$\n";
@@ -52,11 +74,22 @@ public class Simulation {
         return output;
     }
 
+    /**
+     * Methode um eine zufällige Zahl von 0 bis laenge-1 zu erzeugen
+     *
+     * @param laenge Größte Zufallszahl-1
+     * @return Zufällige Zahl von 0 bis laenge-1
+     */
     private int randomElement(int laenge) {
         Random r = new Random();
         return r.nextInt(laenge);
     }
 
+    /**
+     * Methode zur Simulation einer Verurteilung
+     *
+     * @return String des Ergebnisses der Verurteilungen
+     */
     private String simulationVerurteilen() {
         String output = "##### Verurteilen-Simulation #####\n\n";
         Schurke schurke1 = schurken.get(this.randomElement(schurken.size()));
@@ -76,7 +109,12 @@ public class Simulation {
         return output;
     }
 
-
+    /**
+     * Methode zum durchführen zufälliger Kämpfe von Helden gegen Schurken
+     *
+     * @param anzahl Anzahl der zu führenden Kämpfe
+     * @return String der Kampfergebnisse
+     */
     private String simulationKampf(int anzahl) {
         String output = "##### Kampf-Simulation #####\n\n";
         for (int i = 0; i < anzahl; i++) {
@@ -89,11 +127,19 @@ public class Simulation {
         return output;
     }
 
+
+    /**
+     * Methode zum anlegen der Richter der Simulation
+     */
     private void richterAnlegen() {
         this.braverRichter = new Richter("Sir Richter von Bravenhold", 123456, 43, false);
         this.korrupterRichter = new Richter("Sir Richter von Korruptenstein", 3434545, 34, true);
     }
 
+
+    /**
+     * Methode zum anlegen der Syndikate der Simulation
+     */
     private void syndikateAnlegen() {
 
         this.syndikat.add(
@@ -102,6 +148,10 @@ public class Simulation {
                         schurken.toArray(new Schurke[schurken.size()])));
     }
 
+
+    /**
+     * Methode zum anlegen der Unternehmen der Simulation
+     */
     private void unternehmenAnlegen() {
 
         Buerger[] buergerArray = {
@@ -123,6 +173,9 @@ public class Simulation {
                         new Buerger("Peter-Heinz", 654321, 54), buergerArray2));
     }
 
+    /**
+     * Methode zum anlegen der Helden der Simulation
+     */
     private void heldenAnlegen() {
         this.superhelden.add(new Superheld("Wolverine", 40000000, "Krallenhände", Superkraft.Blitzewerfen, Superkraft.Hadoken, Superkraft.Genkidama));
         this.superhelden.add(new Superheld("Spiderman", 3000000, "Spinnenkraft", Superkraft.Kaioken, Superkraft.Kamehameha));
@@ -132,6 +185,9 @@ public class Simulation {
     }
 
 
+    /**
+     * Methode zum anlegen der Schurken der Simulation
+     */
     private void schurkenAnlegen() {
         this.schurken.add(new Schurke("Heinz", 12000, "Dolchhand", Superkraft.Kaioken));
         this.schurken.add(new Schurke("Patrick", 340000, "riesig", Superkraft.Genkidama));

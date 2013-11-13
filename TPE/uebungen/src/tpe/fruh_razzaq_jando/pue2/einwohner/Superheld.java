@@ -56,4 +56,16 @@ public class Superheld extends Mutant {
             throw new IllegalArgumentException("Superheld darf nicht gegen einen anderen Superhelden kämpfen!");
         }
     }
+
+    /**
+     * Methode um bei der Ausgabe eines Objektes einen sinnvollen Wert auszugeben
+     *
+     * @return Einen String zur Beschreibung des Objektes
+     */
+    @Override
+    public String toString() {
+        return "Superheld{" +
+                "superkraefte=" + superkraefte +
+                "} " + super.toString();
+    }
 }

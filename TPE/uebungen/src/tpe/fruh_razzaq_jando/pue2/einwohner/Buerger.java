@@ -31,5 +31,4 @@ public class Buerger extends Mensch implements Einkommensteuer {
         return EinkommensteuerHelfer.berechneEinkommensteuer(this.getEinkommen());
     }
 
-
 }

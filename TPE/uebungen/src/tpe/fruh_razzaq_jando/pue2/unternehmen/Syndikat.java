@@ -68,4 +68,17 @@ public class Syndikat implements Koerperschaftsteuer {
         }
         return (summe / 100) * 25;
     }
+
+    /**
+     * Methode um bei der Ausgabe eines Objektes einen sinnvollen Wert auszugeben
+     *
+     * @return Einen String zur Beschreibung des Objektes
+     */
+    @Override
+    public String toString() {
+        return "Syndikat{" +
+                "name='" + name + '\'' +
+                ", mitglieder=" + mitglieder +
+                "} " + super.toString();
+    }
 }

@@ -60,4 +60,16 @@ public class Schurke extends Mutant implements Einkommensteuer {
     public int berechneEinkommensteuer() {
         return EinkommensteuerHelfer.berechneEinkommensteuer(this.getEinkommen());
     }
+
+    /**
+     * Methode um bei der Ausgabe eines Objektes einen sinnvollen Wert auszugeben
+     *
+     * @return Einen String zur Beschreibung des Objektes
+     */
+    @Override
+    public String toString() {
+        return "Schurke{" +
+                "superkraft=" + superkraft +
+                "} " + super.toString();
+    }
 }

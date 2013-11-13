@@ -41,4 +41,17 @@ public abstract class Unternehmen {
     public int getGewinn() {
         return gewinn;
     }
+
+    /**
+     * Methode um bei der Ausgabe eines Objektes einen sinnvollen Wert auszugeben
+     *
+     * @return Einen String zur Beschreibung des Objektes
+     */
+    @Override
+    public String toString() {
+        return "Unternehmen{" +
+                "name='" + name + '\'' +
+                ", gewinn=" + gewinn +
+                "} " + super.toString();
+    }
 }
