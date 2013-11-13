@@ -47,7 +47,8 @@ public class Simulation {
         String output = "##### Steuerberechnung-Simulation #####\n\n";
         output += "Berechnete Einkommensteuer: " + Finanzamt.berechneEinkommensteuer() + " M$\n";
         output += "Berechnete Gewerbesteuer: " + Finanzamt.berechneGewerbesteuer() + " M$\n";
-        output += "Berechnete Körperschaftsteuer: " + Finanzamt.berechneKoerperschaftsteuer() + " M$";
+        output += "Berechnete Körperschaftsteuer: " + Finanzamt.berechneKoerperschaftsteuer() + " M$\n";
+        output += "Gesamte Steuer: " + Finanzamt.berecheSteuer() + " M$";
         return output;
     }
 

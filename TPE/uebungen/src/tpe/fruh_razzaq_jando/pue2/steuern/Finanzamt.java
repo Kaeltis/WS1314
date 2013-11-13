@@ -54,6 +54,15 @@ public class Finanzamt {
     }
 
     /**
+     * Methode, welche alle Steuern zusammen rechnet.
+     *
+     * @return Die gesamten Steuern
+     */
+    public static int berecheSteuer(){
+        return berechneEinkommensteuer() + berechneGewerbesteuer() + berechneKoerperschaftsteuer();
+    }
+
+    /**
      * Methode, welche die gesamte Einkommensteuer berechnet
      *
      * @return Die gesamte Einkommensteuer
