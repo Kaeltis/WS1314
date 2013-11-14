@@ -1,16 +1,16 @@
 package tpe.fruh_razzaq_jando.pue2.einwohner;
 
 /**
- * Abstrakte Klasse zur Verwaltung eines Menschen
+ * Abstrakte Klasse zur Verwaltung eines Menschen.
  */
 public abstract class Mensch extends Einwohner {
     /**
-     * Membervariable für das Alter eines Menschen
+     * Membervariable für das Alter eines Menschen.
      */
     private int alter;
 
     /**
-     * Konstruktor der Klasse Mensch
+     * Konstruktor der Klasse Mensch.
      *
      * @param name      Name des Menschen
      * @param einkommen Einkommen des Menschen
@@ -22,7 +22,7 @@ public abstract class Mensch extends Einwohner {
     }
 
     /**
-     * Getter der Membervariable Alter
+     * Getter der Membervariable Alter.
      *
      * @return Das Alter des Menschen
      */
@@ -31,15 +31,18 @@ public abstract class Mensch extends Einwohner {
     }
 
     /**
-     * Methode um bei der Ausgabe eines Objektes einen sinnvollen Wert auszugeben
+     * Methode um bei der Ausgabe eines Objektes
+     * einen sinnvollen Wert auszugeben.
      *
      * @return Einen String zur Beschreibung des Objektes
      */
     @Override
     public String toString() {
-        return "Mensch{" +
-                "alter=" + alter +
-                "} " + super.toString();
+        return "Mensch{"
+                + "alter="
+                + alter
+                + "} "
+                + super.toString();
     }
 
 }

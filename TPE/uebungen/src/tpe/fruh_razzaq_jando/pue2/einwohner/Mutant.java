@@ -1,18 +1,18 @@
 package tpe.fruh_razzaq_jando.pue2.einwohner;
 
 /**
- * Abstrakte Klasse zur Implementierung eines Mutanten
+ * Abstrakte Klasse zur Implementierung eines Mutanten.
  *
  * @author TPE_UIB_01
  */
 public abstract class Mutant extends Einwohner {
     /**
-     * Membervariable zur Beschreibung des Mutation
+     * Membervariable zur Beschreibung des Mutation.
      */
     private String mutation;
 
     /**
-     * Konstruktor der Klasse Mutant
+     * Konstruktor der Klasse Mutant.
      *
      * @param name      Names des Mutanten
      * @param einkommen Einkommen des Mutanten
@@ -24,7 +24,7 @@ public abstract class Mutant extends Einwohner {
     }
 
     /**
-     * Getter der Mutation
+     * Getter der Instanzvariable Mutation.
      *
      * @return Die Mutation des Mutanten
      */
@@ -33,7 +33,7 @@ public abstract class Mutant extends Einwohner {
     }
 
     /**
-     * Abstrakte Methode zur Implementierung eines Kampfes
+     * Abstrakte Methode zur Implementierung eines Kampfes.
      *
      * @param m Erben der Klassen Mutant
      * @return Ausgang des Kampfes in Form eines Booleans
@@ -41,14 +41,18 @@ public abstract class Mutant extends Einwohner {
     public abstract boolean kaempfe(Mutant m);
 
     /**
-     * Methode um bei der Ausgabe eines Objektes einen sinnvollen Wert auszugeben
+     * Methode um bei der Ausgabe eines Objektes
+     * einen sinnvollen Wert auszugeben.
      *
      * @return Einen String zur Beschreibung des Objektes
      */
     @Override
     public String toString() {
-        return "Mutant{" +
-                "mutation='" + mutation + '\'' +
-                "} " + super.toString();
+        return "Mutant{"
+                + "mutation='"
+                + mutation
+                + '\''
+                + "} "
+                + super.toString();
     }
 }

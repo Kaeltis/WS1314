@@ -1,22 +1,22 @@
 package tpe.fruh_razzaq_jando.pue2.einwohner;
 
 /**
- * Abstrakte Klasse zur Implementierung eines einwohners
+ * Abstrakte Klasse zur Implementierung eines Einwohners.
  *
  * @author TPE_UIB_01
  */
 public abstract class Einwohner {
     /**
-     * Membervariable für den Namen des Einwohners
+     * Membervariable für den Namen des Einwohners.
      */
     private String name;
     /**
-     * Membervariable für den Gewinn des Einwohners
+     * Membervariable für den Gewinn des Einwohners.
      */
     private int einkommen;
 
     /**
-     * Konstruktor der Klasse Einwohner
+     * Konstruktor der Klasse Einwohner.
      *
      * @param name      Name des Einwohner
      * @param einkommen Einkommen des Einkommer
@@ -27,7 +27,7 @@ public abstract class Einwohner {
     }
 
     /**
-     * Getter der Membervariable Name
+     * Getter der Membervariable Name.
      *
      * @return Den Namen des Einwohners
      */
@@ -36,7 +36,7 @@ public abstract class Einwohner {
     }
 
     /**
-     * Getter der Membervariable Einkommen
+     * Getter der Membervariable Einkommen.
      *
      * @return Das Einkommen des Einwohners
      */
@@ -45,15 +45,19 @@ public abstract class Einwohner {
     }
 
     /**
-     * Methode um bei der Ausgabe eines Objektes einen sinnvollen Wert auszugeben
+     * Methode um bei der Ausgabe eines Objektes
+     * einen sinnvollen Wert auszugeben.
      *
      * @return Einen String zur Beschreibung des Objektes
      */
     @Override
     public String toString() {
-        return "Einwohner{" +
-                "name='" + name + '\'' +
-                ", einkommen=" + einkommen +
-                '}';
+        return "Einwohner{"
+                + "name='"
+                + name
+                + '\''
+                + ", einkommen="
+                + einkommen
+                + '}';
     }
 }

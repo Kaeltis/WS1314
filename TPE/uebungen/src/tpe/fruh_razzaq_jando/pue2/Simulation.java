@@ -14,22 +14,53 @@ import java.util.LinkedList;
 import java.util.Random;
 
 /**
- * Klasse zur Implementierung einer Simulation
+ * Klasse zur Implementierung einer Simulation.
  *
  * @author TPE_UIB_01
  */
-public class Simulation {
-
+final class Simulation {
+    /**
+     * Liste von Schurken zur Simulation.
+     */
     private LinkedList<Schurke> schurken = new LinkedList<Schurke>();
-    private LinkedList<Superheld> superhelden = new LinkedList<Superheld>();
-    private LinkedList<Kapitalgesellschaft> kgs = new LinkedList<Kapitalgesellschaft>();
-    private LinkedList<Personengesellschaft> pgs = new LinkedList<Personengesellschaft>();
-    private LinkedList<Syndikat> syndikat = new LinkedList<Syndikat>();
+    /**
+     * Liste von Superhelden zur Simulation.
+     */
+    private LinkedList<Superheld>
+            superhelden = new LinkedList<Superheld>();
+    /**
+     * Liste von Kapitalgesellschaften zur Simulation.
+     */
+    private LinkedList<Kapitalgesellschaft>
+            kgs = new LinkedList<Kapitalgesellschaft>();
+    /**
+     * Liste von Personengesellschaften zur Simulation.
+     */
+    private LinkedList<Personengesellschaft>
+            pgs = new LinkedList<Personengesellschaft>();
+    /**
+     * Liste von Syndikaten zur Simulation.
+     */
+    private LinkedList<Syndikat> syndikat =
+            new LinkedList<Syndikat>();
+    /**
+     * Nicht korrupter Richter zur Simulation.
+     */
     private Richter braverRichter;
+    /**
+     * Korrupter Richter zur Simulation.
+     */
     private Richter korrupterRichter;
 
     /**
-     * Main Methode und Aufrufe aller anderen Methoden
+     * Privater Konstruktor der Klasse Simulation.
+     */
+    private Simulation() {
+
+    }
+
+    /**
+     * Main Methode und Aufrufe aller anderen Methoden.
      *
      * @param args Kommandozeilenparameter - wird nicht benutzt
      */
@@ -52,31 +83,46 @@ public class Simulation {
     }
 
     /**
-     * Debugmethode zur Ausgabe aller Felder
+     * Debugmethode zur Ausgabe aller Felder.
      *
      * @return String aller Felder
      */
     private String printAll() {
-        return schurken.toString() + "\n\n" + superhelden.toString() + "\n\n" + kgs.toString() + "\n\n" + pgs.toString() + "\n\n"
-                + syndikat.toString() + "\n\n" + braverRichter.toString() + "\n\n" + korrupterRichter.toString();
+        return schurken.toString()
+                + "\n\n" + superhelden.toString()
+                + "\n\n" + kgs.toString()
+                + "\n\n" + pgs.toString()
+                + "\n\n"
+                + syndikat.toString()
+                + "\n\n"
+                + braverRichter.toString()
+                + "\n\n" + korrupterRichter.toString();
     }
 
     /**
-     * Methode um die Steuerberechung zu simulieren
+     * Methode um die Steuerberechung zu simulieren.
      *
-     * @return String des Ergebnisses der Steuerberechnungen.
+     * @return String des Ergebnisses der Steuerberechnungen
      */
     private String simulationSteuern() {
         String output = "##### Steuerberechnung-Simulation #####\n\n";
-        output += "Berechnete Einkommensteuer: " + Finanzamt.berechneEinkommensteuer() + " M$\n";
-        output += "Berechnete Gewerbesteuer: " + Finanzamt.berechneGewerbesteuer() + " M$\n";
-        output += "Berechnete Körperschaftsteuer: " + Finanzamt.berechneKoerperschaftsteuer() + " M$\n";
-        output += "Gesamte Steuer: " + Finanzamt.berecheSteuer() + " M$";
+        output += "Berechnete Einkommensteuer: "
+                + Finanzamt.berechneEinkommensteuer()
+                + " M$\n";
+        output += "Berechnete Gewerbesteuer: "
+                + Finanzamt.berechneGewerbesteuer()
+                + " M$\n";
+        output += "Berechnete Körperschaftsteuer: "
+                + Finanzamt.berechneKoerperschaftsteuer()
+                + " M$\n";
+        output += "Gesamte Steuer: "
+                + Finanzamt.berecheSteuer()
+                + " M$";
         return output;
     }
 
     /**
-     * Methode um eine zufällige Zahl von 0 bis laenge-1 zu erzeugen
+     * Methode um eine zufällige Zahl von 0 bis laenge-1 zu erzeugen.
      *
      * @param laenge Größte Zufallszahl-1
      * @return Zufällige Zahl von 0 bis laenge-1
@@ -87,7 +133,7 @@ public class Simulation {
     }
 
     /**
-     * Methode zur Simulation einer Verurteilung
+     * Methode zur Simulation einer Verurteilung.
      *
      * @return String des Ergebnisses der Verurteilungen
      */
@@ -95,23 +141,33 @@ public class Simulation {
         String output = "##### Verurteilen-Simulation #####\n\n";
         Schurke schurke1 = schurken.get(this.randomElement(schurken.size()));
 
-        output += "Der Richter " + braverRichter.getName() + " urteilt über den Schurken " + schurke1.getName() + "\t--- " +
-                "Der Schurke ";
+        output += "Der Richter "
+                + braverRichter.getName()
+                + " urteilt über den Schurken "
+                + schurke1.getName() + "\t--- "
+                + "Der Schurke ";
+
         boolean verurteilenErgebnis = braverRichter.verurteilen();
-        output += (verurteilenErgebnis ? "muss ins Gefängnis" : "kommt frei") + "\n";
+        output += (verurteilenErgebnis
+                ? "muss ins Gefängnis" : "kommt frei") + "\n";
 
         Schurke schurke2 = schurken.get(this.randomElement(schurken.size()));
 
-        output += "Der Richter " + korrupterRichter.getName() + " urteilt über den Schurken " + schurke2.getName() + "\t--- " +
-                "Der Schurke ";
+        output += "Der Richter "
+                + korrupterRichter.getName()
+                + " urteilt über den Schurken "
+                + schurke2.getName() + "\t--- "
+                + "Der Schurke ";
+
         verurteilenErgebnis = korrupterRichter.verurteilen();
-        output += (verurteilenErgebnis ? "muss ins Gefängnis" : "kommt frei") + "\n";
+        output += (verurteilenErgebnis
+                ? "muss ins Gefängnis" : "kommt frei") + "\n";
 
         return output;
     }
 
     /**
-     * Methode zum durchführen zufälliger Kämpfe von Helden gegen Schurken
+     * Methode zum durchführen zufälliger Kämpfe von Helden gegen Schurken.
      *
      * @param anzahl Anzahl der zu führenden Kämpfe
      * @return String der Kampfergebnisse
@@ -119,9 +175,16 @@ public class Simulation {
     private String simulationKampf(int anzahl) {
         String output = "##### Kampf-Simulation #####\n\n";
         for (int i = 0; i < anzahl; i++) {
-            Superheld held = superhelden.get(this.randomElement(superhelden.size()));
-            Schurke schurke = schurken.get(this.randomElement(schurken.size()));
-            output += "Der Held " + held.getName() + " kämpft gegen den Schurken " + schurke.getName() + "\t--- Der Held ";
+            Superheld held = superhelden.get(
+                    this.randomElement(superhelden.size()));
+            Schurke schurke = schurken.get(
+                    this.randomElement(schurken.size()));
+            output += "Der Held "
+                    + held.getName()
+                    + " kämpft gegen den Schurken "
+                    + schurke.getName()
+                    + "\t--- Der Held ";
+
             boolean kampfErgebnis = held.kaempfe(schurke);
             output += (kampfErgebnis ? "gewinnt" : "verliert") + "\n";
         }
@@ -130,28 +193,31 @@ public class Simulation {
 
 
     /**
-     * Methode zum anlegen der Richter der Simulation
+     * Methode zum Anlegen der Richter der Simulation.
      */
     private void richterAnlegen() {
-        this.braverRichter = new Richter("Sir Richter von Bravenhold", 123456, 43, false);
-        this.korrupterRichter = new Richter("Sir Richter von Korruptenstein", 3434545, 34, true);
+        this.braverRichter = new Richter(
+                "Sir Richter von Bravenhold", 123456, 43, false);
+        this.korrupterRichter = new Richter(
+                "Sir Richter von Korruptenstein", 3434545, 34, true);
     }
 
 
     /**
-     * Methode zum anlegen der Syndikate der Simulation
+     * Methode zum anlegen der Syndikate der Simulation.
      */
     private void syndikateAnlegen() {
 
         this.syndikat.add(
                 new Syndikat("SI:7",
-                        new Schurke("Artermis Entreri", 123434, "Viel Geld", Superkraft.Kamehameha),
+                        new Schurke("Artermis Entreri", 123434,
+                                "Viel Geld", Superkraft.Kamehameha),
                         schurken.toArray(new Schurke[schurken.size()])));
     }
 
 
     /**
-     * Methode zum anlegen der Unternehmen der Simulation
+     * Methode zum anlegen der Unternehmen der Simulation.
      */
     private void unternehmenAnlegen() {
 
@@ -175,25 +241,50 @@ public class Simulation {
     }
 
     /**
-     * Methode zum anlegen der Helden der Simulation
+     * Methode zum anlegen der Helden der Simulation.
      */
     private void heldenAnlegen() {
-        this.superhelden.add(new Superheld("Wolverine", 40000000, "Krallenhände", Superkraft.Blitzewerfen, Superkraft.Hadoken, Superkraft.Genkidama));
-        this.superhelden.add(new Superheld("Spiderman", 3000000, "Spinnenkraft", Superkraft.Kaioken, Superkraft.Kamehameha));
-        this.superhelden.add(new Superheld("Hulk", 5000000, "Grüne Haut", Superkraft.Laserstrahl, Superkraft.Magnetkraft));
-        this.superhelden.add(new Superheld("Lina", 3450000, "Feueratem", Superkraft.Kamehameha, Superkraft.Blitzewerfen));
-        this.superhelden.add(new Superheld("Lich", 234545676, "Frostkörper", Superkraft.Hadoken, Superkraft.Magnetkraft, Superkraft.Kamehameha));
+        this.superhelden.add(
+                new Superheld("Wolverine", 40000000, "Krallenhände",
+                        Superkraft.Blitzewerfen, Superkraft.Hadoken,
+                        Superkraft.Genkidama));
+
+        this.superhelden.add(
+                new Superheld("Spiderman", 3000000, "Spinnenkraft",
+                        Superkraft.Kaioken, Superkraft.Kamehameha));
+
+        this.superhelden.add(
+                new Superheld("Hulk", 5000000, "Grüne Haut",
+                        Superkraft.Laserstrahl, Superkraft.Magnetkraft));
+
+        this.superhelden.add(
+                new Superheld("Lina", 3450000, "Feueratem",
+                        Superkraft.Kamehameha, Superkraft.Blitzewerfen));
+        this.superhelden.add(
+                new Superheld("Lich", 234545676, "Frostkörper",
+                        Superkraft.Hadoken, Superkraft.Magnetkraft,
+                        Superkraft.Kamehameha));
     }
 
 
     /**
-     * Methode zum anlegen der Schurken der Simulation
+     * Methode zum anlegen der Schurken der Simulation.
      */
     private void schurkenAnlegen() {
-        this.schurken.add(new Schurke("Heinz", 12000, "Dolchhand", Superkraft.Kaioken));
-        this.schurken.add(new Schurke("Patrick", 340000, "riesig", Superkraft.Genkidama));
-        this.schurken.add(new Schurke("Max", 333333, "Surface", Superkraft.Laserstrahl));
-        this.schurken.add(new Schurke("Yordan", 28903, "Naturlich", Superkraft.Kamehameha));
-        this.schurken.add(new Schurke("Elena", 45768, "Fliegen", Superkraft.Hadoken));
+        this.schurken.add(
+                new Schurke("Heinz", 12000, "Dolchhand", Superkraft.Kaioken));
+
+        this.schurken.add(
+                new Schurke("Patrick", 340000, "riesig", Superkraft.Genkidama));
+
+        this.schurken.add(
+                new Schurke("Max", 333333, "Surface", Superkraft.Laserstrahl));
+
+        this.schurken.add(
+                new Schurke("Yordan", 28903, "Naturlich",
+                        Superkraft.Kamehameha));
+
+        this.schurken.add(
+                new Schurke("Elena", 45768, "Fliegen", Superkraft.Hadoken));
     }
 }

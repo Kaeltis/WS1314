@@ -1,18 +1,18 @@
 package tpe.fruh_razzaq_jando.pue2.einwohner;
 
 /**
- * Klasse zur Implementierung eines Richters
+ * Klasse zur Implementierung eines Richters.
  *
  * @author TPE_UIB_01
  */
 public class Richter extends Mensch {
     /**
-     * Membervariable zur Beschreibung der Korruptheit(Bestechnung)
+     * Membervariable zur Beschreibung der Korruptheit(Bestechnung).
      */
     private boolean korrupt;
 
     /**
-     * Konstruktor der Klasse Richter
+     * Konstruktor der Klasse Richter.
      *
      * @param name      Name des Richter
      * @param einkommen Einkommen des Richter
@@ -25,7 +25,7 @@ public class Richter extends Mensch {
     }
 
     /**
-     * Getter der der Korrputheit
+     * Getter der Membervarialble Korruptheit.
      *
      * @return Korruptheit
      */
@@ -34,7 +34,7 @@ public class Richter extends Mensch {
     }
 
     /**
-     * Methode um einen Schurken zu verurteilen
+     * Methode um einen Schurken zu verurteilen.
      *
      * @return Ausgang der Verurteilung
      */
@@ -43,14 +43,17 @@ public class Richter extends Mensch {
     }
 
     /**
-     * Methode um bei der Ausgabe eines Objektes einen sinnvollen Wert auszugeben
+     * Methode um bei der Ausgabe eines Objektes
+     * einen sinnvollen Wert auszugeben.
      *
      * @return Einen String zur Beschreibung des Objektes
      */
     @Override
     public String toString() {
-        return "Richter{" +
-                "korrupt=" + korrupt +
-                "} " + super.toString();
+        return "Richter{"
+                + "korrupt="
+                + korrupt
+                + "} "
+                + super.toString();
     }
 }

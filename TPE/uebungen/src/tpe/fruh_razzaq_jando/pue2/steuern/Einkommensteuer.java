@@ -1,17 +1,17 @@
 package tpe.fruh_razzaq_jando.pue2.steuern;
 
 /**
- * Interface zur Implementierung der Einkommenssteuer
+ * Interface zur Implementierung der Einkommenssteuer.
  *
  * @author TPE_UIB_01
  */
 public interface Einkommensteuer {
 
     /**
-     * Abstrakte Methode, zur Berechnung der Einkommenssteuer
+     * Abstrakte Methode, zur Berechnung der Einkommenssteuer.
      *
      * @return Einkommensteuer des Verwenders
      */
-    public abstract int berechneEinkommensteuer();
+    int berechneEinkommensteuer();
 
 }

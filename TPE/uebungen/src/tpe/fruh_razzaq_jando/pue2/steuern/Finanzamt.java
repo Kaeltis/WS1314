@@ -3,54 +3,83 @@ package tpe.fruh_razzaq_jando.pue2.steuern;
 import java.util.LinkedList;
 
 /**
- * Klasse, welche ein Finanzamt implementiert
+ * Klasse, welche ein Finanzamt implementiert.
  *
  * @author TPE_UIB_01
  */
-public class Finanzamt {
+public final class Finanzamt {
 
     /**
-     * Statische Liste um die Einkommensteuer zu verwalten
+     * Einmalige Instanz des Finzanzamtes.
      */
-    private static final LinkedList<Einkommensteuer> einkommensteuerList = new LinkedList<Einkommensteuer>();
-    /**
-     * Statische Liste um die Koerperschaftssteuer zu verwalten
-     */
-    private static final LinkedList<Koerperschaftsteuer> koerperschaftsteuerList = new LinkedList<Koerperschaftsteuer>();
-    /**
-     * Statische Liste um die Gewerbesteuer zu verwalten
-     */
-    private static final LinkedList<Gewerbesteuer> gewerbesteuerList = new LinkedList<Gewerbesteuer>();
-
+    public static final Finanzamt INSTANZ = new Finanzamt();
 
     /**
-     * Statische Methode, um einen Verwender des Interfaces Einkommenssteuer durch
-     * Polymorphie in die Liste hinzuzufügen
-     *
-     * @param e Durch Polymorhpie übergebene Klassenreferenz, des Verwenders(Interface)
+     * Statische Liste um die Einkommensteuer zu verwalten.
      */
-    public static void addEinkommensteuerpflichtig(Einkommensteuer e) {
-        einkommensteuerList.add(e);
+    private static final LinkedList<Einkommensteuer>
+            EINKOMMENSTEUERLIST = new LinkedList<Einkommensteuer>();
+    /**
+     * Statische Liste um die Koerperschaftssteuer zu verwalten.
+     */
+    private static final LinkedList<Koerperschaftsteuer>
+            KOERPERSCHAFTSTEUERLIST = new LinkedList<Koerperschaftsteuer>();
+    /**
+     * Statische Liste um die Gewerbesteuer zu verwalten.
+     */
+    private static final LinkedList<Gewerbesteuer>
+            GEWERBESTEUERLIST = new LinkedList<Gewerbesteuer>();
+
+    /**
+     * Private Konstruktor der Klasse Finzamt,
+     * um weitere Objektreferenzen der Klasse
+     * zu vermeiden.
+     */
+    private Finanzamt() {
+
     }
 
     /**
-     * Statische Methode, um einen Verwender des Interfaces Koerperschaftssteuer durch
-     * Polymorphie in die Liste hinzuzufügen
+     * Getter der Finanzamt-Instanz, welche angelegt wurde.
      *
-     * @param k Durch Polymorhpie übergebene Klassenreferenz, des Verwenders(Interface)
+     * @return Die angelegte Finanzamt Instanz.
+     */
+    public static Finanzamt getInstance() {
+        return INSTANZ;
+    }
+
+    /**
+     * Statische Methode, um einen Verwender des Interfaces
+     * Einkommenssteuer durch Polymorphie in die Liste hinzuzufügen.
+     *
+     * @param e Durch Polymorhpie übergebene Klassenreferenz,
+     *          des Verwenders(Interface)
+     */
+    public static void addEinkommensteuerpflichtig(Einkommensteuer e) {
+        EINKOMMENSTEUERLIST.add(e);
+    }
+
+    /**
+     * Statische Methode, um einen Verwender des
+     * Interfaces Koerperschaftssteuer durch Polymorphie
+     * in die Liste hinzuzufügen.
+     *
+     * @param k Durch Polymorhpie übergebene Klassenreferenz,
+     *          des Verwenders(Interface)
      */
     public static void addKoerperschaftsteuerpflichtig(Koerperschaftsteuer k) {
-        koerperschaftsteuerList.add(k);
+        KOERPERSCHAFTSTEUERLIST.add(k);
     }
 
     /**
      * Statische Methode, um einen Verwender des Interfaces Gewerbesteuer durch
-     * Polymorphie in die Liste hinzuzufügen
+     * Polymorphie in die Liste hinzuzufügen.
      *
-     * @param g Durch Polymorhpie übergebene Klassenreferenz, des Verwenders(Interface)
+     * @param g Durch Polymorhpie übergebene Klassenreferenz,
+     *          des Verwenders(Interface)
      */
     public static void addGewerbesteuerpflichtig(Gewerbesteuer g) {
-        gewerbesteuerList.add(g);
+        GEWERBESTEUERLIST.add(g);
     }
 
     /**
@@ -58,12 +87,14 @@ public class Finanzamt {
      *
      * @return Die gesamten Steuern
      */
-    public static int berecheSteuer(){
-        return berechneEinkommensteuer() + berechneGewerbesteuer() + berechneKoerperschaftsteuer();
+    public static int berecheSteuer() {
+        return berechneEinkommensteuer()
+                + berechneGewerbesteuer()
+                + berechneKoerperschaftsteuer();
     }
 
     /**
-     * Methode, welche die gesamte Einkommensteuer berechnet
+     * Methode, welche die gesamte Einkommensteuer berechnet.
      *
      * @return Die gesamte Einkommensteuer
      */
@@ -74,14 +105,14 @@ public class Finanzamt {
          * Es wird die dynamische Liste der Einkommenssteuer durchlaufen
          * @param e Ist hierbei ein Verwender des Interfaces Einkommensteuer
          */
-        for (Einkommensteuer e : einkommensteuerList) {
+        for (Einkommensteuer e : EINKOMMENSTEUERLIST) {
             summe += e.berechneEinkommensteuer();
         }
         return summe;
     }
 
     /**
-     * Methode, welche die gesamte Koerperschaftsteuer berechnet
+     * Methode, welche die gesamte Koerperschaftsteuer berechnet.
      *
      * @return Die gesamte Koerperschaftsteuer
      */
@@ -89,16 +120,17 @@ public class Finanzamt {
         int summe = 0;
         /**
          * Es wird die dynamische Liste der Koerperschaftsteuer durchlaufen
-         * @param k Ist hierbei ein Verwender des Interfaces Koerperschaftsteuer
+         * @param k Ist hierbei ein Verwender des
+         *          Interfaces Koerperschaftsteuer
          */
-        for (Koerperschaftsteuer k : koerperschaftsteuerList) {
+        for (Koerperschaftsteuer k : KOERPERSCHAFTSTEUERLIST) {
             summe += k.berechneKoerperschaftsteuer();
         }
         return summe;
     }
 
     /**
-     * Methode, welche die gesamte Gewerbesteuer berechnet
+     * Methode, welche die gesamte Gewerbesteuer berechnet.
      *
      * @return Die gesamte Gewerbesteuer
      */
@@ -109,7 +141,7 @@ public class Finanzamt {
          * Es wird die dynamische Liste der Gewerbesteuer durchlaufen
          * @param g Ist hierbei ein Verwender des Interfaces Gewerbesteuer
          */
-        for (Gewerbesteuer g : gewerbesteuerList) {
+        for (Gewerbesteuer g : GEWERBESTEUERLIST) {
             summe += g.berechneGewerbesteuer();
         }
         return summe;
