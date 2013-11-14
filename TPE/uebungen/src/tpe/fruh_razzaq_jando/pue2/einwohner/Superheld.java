@@ -53,8 +53,9 @@ public class Superheld extends Mutant {
     public boolean kaempfe(Mutant m) {
         if (m instanceof Schurke) {
             /*
-            Redundanter Aufruf von Schurke, da der Ausgang des Kampfes,
-            bei gleichen Objekten, in jeder Richtung gleich ausgehen muss
+            Aufruf von Schurke.kaempfe(), da der Ausgang des Kampfes,
+            bei gleichen Objekten, in jeder Richtung gleich ausgehen muss,
+            das Ergebnis muss nur negiert sein.
             */
             return !m.kaempfe(this);
         } else {

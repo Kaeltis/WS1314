@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>tpe.fruh_razzaq_jando.pue2</OriginalElement>
+  <nodes>
+    <node x="1696.0826612903222" y="728.0">tpe.fruh_razzaq_jando.pue2.unternehmen.Syndikat</node>
+    <node x="106.61962365591398" y="209.0">tpe.fruh_razzaq_jando.pue2.einwohner.Mensch</node>
+    <node x="825.9064516129031" y="1289.0">tpe.fruh_razzaq_jando.pue2.MetropolisTest</node>
+    <node x="2176.165994623656" y="160.0">tpe.fruh_razzaq_jando.pue2.helper.Superkraft</node>
+    <node x="314.0" y="1633.0">tpe.fruh_razzaq_jando.pue2.helper.EinkommensteuerHelfer</node>
+    <node x="90.49999999999955" y="738.0">tpe.fruh_razzaq_jando.pue2.einwohner.Richter</node>
+    <node x="213.9696236559139" y="428.5">tpe.fruh_razzaq_jando.pue2.einwohner.Buerger</node>
+    <node x="2124.5091397849465" y="738.0">tpe.fruh_razzaq_jando.pue2.einwohner.Superheld</node>
+    <node x="616.9064516129033" y="408.0">tpe.fruh_razzaq_jando.pue2.unternehmen.Unternehmen</node>
+    <node x="0.0" y="1633.0">tpe.fruh_razzaq_jando.pue2.helper.Konstanten</node>
+    <node x="1754.218951612903" y="398.0">tpe.fruh_razzaq_jando.pue2.einwohner.Schurke</node>
+    <node x="786.4999999999997" y="728.0">tpe.fruh_razzaq_jando.pue2.unternehmen.Personengesellschaft</node>
+    <node x="1335.1874999999995" y="439.0">tpe.fruh_razzaq_jando.pue2.steuern.Koerperschaftsteuer</node>
+    <node x="1255.82311827957" y="1178.0">tpe.fruh_razzaq_jando.pue2.Simulation</node>
+    <node x="382.49999999999966" y="728.0">tpe.fruh_razzaq_jando.pue2.unternehmen.Kapitalgesellschaft</node>
+    <node x="1221.1874999999995" y="230.0">tpe.fruh_razzaq_jando.pue2.steuern.Einkommensteuer</node>
+    <node x="902.0314516129033" y="439.0">tpe.fruh_razzaq_jando.pue2.steuern.Gewerbesteuer</node>
+    <node x="1887.8764784946231" y="199.0">tpe.fruh_razzaq_jando.pue2.einwohner.Mutant</node>
+    <node x="1203.4999999999995" y="648.0">tpe.fruh_razzaq_jando.pue2.steuern.Finanzamt</node>
+    <node x="1063.833333333333" y="0.0">tpe.fruh_razzaq_jando.pue2.einwohner.Einwohner</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="tpe.fruh_razzaq_jando.pue2.Simulation" target="tpe.fruh_razzaq_jando.pue2.einwohner.Superheld">
+      <point x="202.58333333333326" y="-205.0" />
+      <point x="1738.9064516129033" y="1138.0" />
+      <point x="2268.5091397849465" y="1138.0" />
+      <point x="-48.0" y="55.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.einwohner.Schurke" target="tpe.fruh_razzaq_jando.pue2.helper.Superkraft">
+      <point x="108.0" y="-65.0" />
+      <point x="2024.218951612903" y="378.0" />
+      <point x="2214.999327956989" y="378.0" />
+      <point x="-77.66666666666652" y="94.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.unternehmen.Kapitalgesellschaft" target="tpe.fruh_razzaq_jando.pue2.unternehmen.Unternehmen">
+      <point x="0.0" y="-65.0" />
+      <point x="574.4999999999997" y="608.0" />
+      <point x="676.4064516129033" y="608.0" />
+      <point x="-59.5" y="55.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.Simulation" target="tpe.fruh_razzaq_jando.pue2.einwohner.Richter">
+      <point x="-233.75000000000023" y="-205.0" />
+      <point x="1302.5731182795698" y="1028.0" />
+      <point x="316.3333333333328" y="1028.0" />
+      <point x="90.33333333333331" y="55.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.einwohner.Buerger" target="tpe.fruh_razzaq_jando.pue2.steuern.Einkommensteuer">
+      <point x="47.5" y="-34.5" />
+      <point x="356.4696236559139" y="368.0" />
+      <point x="1241.8874999999998" y="368.0" />
+      <point x="-82.79999999999995" y="24.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.einwohner.Schurke" target="tpe.fruh_razzaq_jando.pue2.einwohner.Mutant">
+      <point x="0.0" y="-65.0" />
+      <point x="1916.218951612903" y="378.0" />
+      <point x="1948.3764784946231" y="378.0" />
+      <point x="-60.5" y="55.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.steuern.Finanzamt" target="tpe.fruh_razzaq_jando.pue2.steuern.Gewerbesteuer">
+      <point x="-162.5" y="-145.0" />
+      <point x="1235.9999999999995" y="558.0" />
+      <point x="1025.1564516129033" y="558.0" />
+      <point x="24.625" y="24.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.unternehmen.Kapitalgesellschaft" target="tpe.fruh_razzaq_jando.pue2.steuern.Gewerbesteuer">
+      <point x="76.79999999999995" y="-65.0" />
+      <point x="651.2999999999996" y="618.0" />
+      <point x="926.6564516129033" y="618.0" />
+      <point x="-73.875" y="24.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.unternehmen.Personengesellschaft" target="tpe.fruh_razzaq_jando.pue2.steuern.Einkommensteuer">
+      <point x="158.79999999999995" y="-65.0" />
+      <point x="1143.7999999999997" y="618.0" />
+      <point x="1109.5314516129033" y="618.0" />
+      <point x="1109.5314516129033" y="378.0" />
+      <point x="1283.2874999999995" y="378.0" />
+      <point x="-41.40000000000009" y="24.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.MetropolisTest" target="tpe.fruh_razzaq_jando.pue2.unternehmen.Kapitalgesellschaft">
+      <point x="-24.583333333333144" y="-94.0" />
+      <point x="948.8231182795699" y="1138.0" />
+      <point x="430.49999999999966" y="1138.0" />
+      <point x="-144.0" y="65.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.unternehmen.Kapitalgesellschaft" target="tpe.fruh_razzaq_jando.pue2.einwohner.Buerger">
+      <point x="-153.60000000000008" y="-65.0" />
+      <point x="420.89999999999964" y="618.0" />
+      <point x="293.13629032258063" y="618.0" />
+      <point x="-15.833333333333314" y="34.5" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.Simulation" target="tpe.fruh_razzaq_jando.pue2.unternehmen.Kapitalgesellschaft">
+      <point x="-109.08333333333348" y="-205.0" />
+      <point x="1427.2397849462366" y="988.0" />
+      <point x="718.4999999999997" y="988.0" />
+      <point x="144.0" y="65.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.Simulation" target="tpe.fruh_razzaq_jando.pue2.unternehmen.Syndikat">
+      <point x="46.75" y="-205.0" />
+      <point x="1583.07311827957" y="1078.0" />
+      <point x="1894.2076612903222" y="1078.0" />
+      <point x="39.625" y="65.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.MetropolisTest" target="tpe.fruh_razzaq_jando.pue2.einwohner.Buerger">
+      <point x="-122.91666666666652" y="-94.0" />
+      <point x="850.4897849462366" y="1158.0" />
+      <point x="0.0" y="1158.0" />
+      <point x="0.0" y="628.0" />
+      <point x="229.80295698924715" y="628.0" />
+      <point x="-79.16666666666674" y="34.5" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.einwohner.Mutant" target="tpe.fruh_razzaq_jando.pue2.einwohner.Einwohner">
+      <point x="2.2737367544323206E-13" y="-55.0" />
+      <point x="2008.8764784946234" y="135.0" />
+      <point x="1231.083333333333" y="135.0" />
+      <point x="55.75" y="55.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.MetropolisTest" target="tpe.fruh_razzaq_jando.pue2.einwohner.Schurke">
+      <point x="24.583333333333485" y="-94.0" />
+      <point x="997.9897849462366" y="1048.0" />
+      <point x="1603.9999999999995" y="1048.0" />
+      <point x="1603.9999999999995" y="628.0" />
+      <point x="1781.218951612903" y="628.0" />
+      <point x="-135.0" y="65.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.einwohner.Superheld" target="tpe.fruh_razzaq_jando.pue2.einwohner.Mutant">
+      <point x="-128.0" y="-55.0" />
+      <point x="2188.5091397849465" y="628.0" />
+      <point x="2088.718951612903" y="628.0" />
+      <point x="2088.718951612903" y="368.0" />
+      <point x="2069.3764784946234" y="368.0" />
+      <point x="60.50000000000023" y="55.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.Simulation" target="tpe.fruh_razzaq_jando.pue2.unternehmen.Personengesellschaft">
+      <point x="-15.583333333333485" y="-205.0" />
+      <point x="1520.7397849462366" y="958.0" />
+      <point x="1117.333333333333" y="958.0" />
+      <point x="132.33333333333348" y="65.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.Simulation" target="tpe.fruh_razzaq_jando.pue2.einwohner.Buerger">
+      <point x="-202.58333333333348" y="-205.0" />
+      <point x="1333.7397849462366" y="1018.0" />
+      <point x="371.99999999999966" y="1018.0" />
+      <point x="371.99999999999966" y="628.0" />
+      <point x="261.4696236559139" y="628.0" />
+      <point x="-47.5" y="34.5" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.unternehmen.Syndikat" target="tpe.fruh_razzaq_jando.pue2.steuern.Koerperschaftsteuer">
+      <point x="-105.66666666666674" y="-65.0" />
+      <point x="1748.9159946236555" y="608.0" />
+      <point x="1529.4374999999995" y="608.0" />
+      <point x="83.25" y="24.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.unternehmen.Personengesellschaft" target="tpe.fruh_razzaq_jando.pue2.steuern.Gewerbesteuer">
+      <point x="79.40000000000009" y="-65.0" />
+      <point x="1064.3999999999996" y="568.0" />
+      <point x="975.9064516129033" y="568.0" />
+      <point x="-24.625" y="24.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.unternehmen.Personengesellschaft" target="tpe.fruh_razzaq_jando.pue2.einwohner.Buerger">
+      <point x="-79.39999999999998" y="-65.0" />
+      <point x="905.5999999999997" y="588.0" />
+      <point x="388.13629032258063" y="588.0" />
+      <point x="79.16666666666674" y="34.5" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.einwohner.Schurke" target="tpe.fruh_razzaq_jando.pue2.steuern.Einkommensteuer">
+      <point x="-108.0" y="-65.0" />
+      <point x="1808.218951612903" y="368.0" />
+      <point x="1407.4874999999997" y="368.0" />
+      <point x="82.79999999999995" y="24.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.einwohner.Superheld" target="tpe.fruh_razzaq_jando.pue2.helper.Superkraft">
+      <point x="0.0" y="-55.0" />
+      <point x="2316.5091397849465" y="628.0" />
+      <point x="2325.2591397849465" y="628.0" />
+      <point x="2325.2591397849465" y="378.0" />
+      <point x="2292.665994623656" y="378.0" />
+      <point x="0.0" y="94.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.MetropolisTest" target="tpe.fruh_razzaq_jando.pue2.einwohner.Superheld">
+      <point x="122.91666666666686" y="-94.0" />
+      <point x="1096.3231182795698" y="1128.0" />
+      <point x="2172.5091397849465" y="1128.0" />
+      <point x="-144.0" y="55.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.einwohner.Mensch" target="tpe.fruh_razzaq_jando.pue2.einwohner.Einwohner">
+      <point x="0.0" y="-45.0" />
+      <point x="210.61962365591398" y="135.0" />
+      <point x="1119.583333333333" y="135.0" />
+      <point x="-55.75" y="55.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.einwohner.Richter" target="tpe.fruh_razzaq_jando.pue2.einwohner.Mensch">
+      <point x="0.0" y="-55.0" />
+      <point x="225.99999999999955" y="618.0" />
+      <point x="147.36962365591398" y="618.0" />
+      <point x="147.36962365591398" y="378.0" />
+      <point x="158.61962365591398" y="378.0" />
+      <point x="-52.0" y="45.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.unternehmen.Personengesellschaft" target="tpe.fruh_razzaq_jando.pue2.unternehmen.Unternehmen">
+      <point x="0.0" y="-65.0" />
+      <point x="984.9999999999997" y="578.0" />
+      <point x="795.4064516129033" y="578.0" />
+      <point x="59.5" y="55.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.unternehmen.Kapitalgesellschaft" target="tpe.fruh_razzaq_jando.pue2.steuern.Koerperschaftsteuer">
+      <point x="153.60000000000002" y="-65.0" />
+      <point x="728.0999999999997" y="628.0" />
+      <point x="1362.9374999999995" y="628.0" />
+      <point x="-83.25" y="24.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.steuern.Finanzamt" target="tpe.fruh_razzaq_jando.pue2.steuern.Einkommensteuer">
+      <point x="-32.5" y="-145.0" />
+      <point x="1365.9999999999995" y="618.0" />
+      <point x="1324.6874999999995" y="618.0" />
+      <point x="0.0" y="24.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.Simulation" target="tpe.fruh_razzaq_jando.pue2.einwohner.Schurke">
+      <point x="171.41666666666674" y="-205.0" />
+      <point x="1707.7397849462368" y="1118.0" />
+      <point x="2045.5826612903222" y="1118.0" />
+      <point x="2045.5826612903222" y="628.0" />
+      <point x="2051.218951612903" y="628.0" />
+      <point x="135.0" y="65.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.MetropolisTest" target="tpe.fruh_razzaq_jando.pue2.unternehmen.Syndikat">
+      <point x="73.75000000000011" y="-94.0" />
+      <point x="1047.1564516129033" y="1058.0" />
+      <point x="1735.7076612903222" y="1058.0" />
+      <point x="-118.875" y="65.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.unternehmen.Syndikat" target="tpe.fruh_razzaq_jando.pue2.einwohner.Schurke">
+      <point x="105.66666666666674" y="-65.0" />
+      <point x="1960.249327956989" y="628.0" />
+      <point x="1889.218951612903" y="628.0" />
+      <point x="-27.0" y="65.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.steuern.Finanzamt" target="tpe.fruh_razzaq_jando.pue2.steuern.Koerperschaftsteuer">
+      <point x="97.5" y="-145.0" />
+      <point x="1495.9999999999995" y="628.0" />
+      <point x="1473.9374999999995" y="628.0" />
+      <point x="27.75" y="24.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.MetropolisTest" target="tpe.fruh_razzaq_jando.pue2.einwohner.Richter">
+      <point x="-73.74999999999989" y="-94.0" />
+      <point x="899.6564516129032" y="1148.0" />
+      <point x="135.6666666666663" y="1148.0" />
+      <point x="-90.33333333333331" y="55.0" />
+    </edge>
+    <edge source="tpe.fruh_razzaq_jando.pue2.einwohner.Buerger" target="tpe.fruh_razzaq_jando.pue2.einwohner.Mensch">
+      <point x="-47.5" y="-34.5" />
+      <point x="261.4696236559139" y="378.0" />
+      <point x="262.619623655914" y="378.0" />
+      <point x="52.0" y="45.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.2917109458023379" x="1254.5" y="931.0000000000001" />
+  <SelectedNodes>
+    <node>tpe.fruh_razzaq_jando.pue2.MetropolisTest</node>
+    <node>tpe.fruh_razzaq_jando.pue2.Simulation</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
