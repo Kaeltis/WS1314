@@ -21,9 +21,16 @@ public class MetropolisTest {
 
     @Test
     public void testKampf() {
-        assertTrue(new Superheld("Superman", 120000, "Muskeln", Superkraft.Hadoken, Superkraft.Blitzewerfen).kaempfe(
+        // Schurke gewinnt (Held hat Kraft nicht)
+        assertFalse(new Superheld("Superman", 120000, "Muskeln", Superkraft.Hadoken, Superkraft.Blitzewerfen).kaempfe(
                 new Schurke("Atermis Etreri", 500, "DoppelDolchHand", Superkraft.Sturmkraft)));
         assertTrue(new Schurke("Schurke1", 234565, "Dolchhand", Superkraft.Hadoken).kaempfe(
+                new Superheld("Suuuupermann", 234345, "Fliegen", Superkraft.Blitzewerfen, Superkraft.Kaioken)));
+
+        // Superheld gewinnt (hat Kraft des Schurken)
+        assertTrue(new Superheld("Superman", 120000, "Muskeln", Superkraft.Hadoken, Superkraft.Blitzewerfen).kaempfe(
+                new Schurke("Atermis Etreri", 500, "DoppelDolchHand", Superkraft.Blitzewerfen)));
+        assertFalse(new Schurke("Schurke1", 234565, "Dolchhand", Superkraft.Blitzewerfen).kaempfe(
                 new Superheld("Suuuupermann", 234345, "Fliegen", Superkraft.Blitzewerfen, Superkraft.Kaioken)));
     }
 

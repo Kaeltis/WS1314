@@ -53,10 +53,10 @@ public class Superheld extends Mutant {
     public boolean kaempfe(Mutant m) {
         if (m instanceof Schurke) {
             /*
-            Redundanter Aufruf von Schuke, da der Ausgang des Kampfes,
+            Redundanter Aufruf von Schurke, da der Ausgang des Kampfes,
             bei gleichen Objekten, in jeder Richtung gleich ausgehen muss
             */
-            return m.kaempfe(this);
+            return !m.kaempfe(this);
         } else {
             throw new IllegalArgumentException(
                     "Superheld darf nicht gegen einen "
