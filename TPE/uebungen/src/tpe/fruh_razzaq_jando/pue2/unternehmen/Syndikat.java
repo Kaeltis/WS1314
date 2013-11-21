@@ -70,7 +70,9 @@ public class Syndikat implements Koerperschaftsteuer {
         int summe = 0;
         //Es werden die Mitlgieder des Syndikats durchlaufen
         for (Schurke s : this.mitglieder) {
-            summe += s.getEinkommen();
+            if (s.getEinkommen() > 0) {
+                summe += s.getEinkommen();
+            }
         }
         return (summe / HUNDRED) * TWENTYFIVE;
     }

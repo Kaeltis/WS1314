@@ -57,7 +57,7 @@ public class Kapitalgesellschaft extends
      */
     @Override
     public int berechneKoerperschaftsteuer() {
-        return (this.getGewinn() / HUNDRED) * TWENTYFIVE;
+        return (this.getGewinn() <= 0) ? 0 : (this.getGewinn() / HUNDRED) * TWENTYFIVE;
     }
 
     /**
@@ -67,7 +67,7 @@ public class Kapitalgesellschaft extends
      */
     @Override
     public int berechneGewerbesteuer() {
-        return (this.getGewinn() / HUNDRED) * TEN;
+        return (this.getGewinn() <= 0) ? 0 : (this.getGewinn() / HUNDRED) * TEN;
     }
 
     /**

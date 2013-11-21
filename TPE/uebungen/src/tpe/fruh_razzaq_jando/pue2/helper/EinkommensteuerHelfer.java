@@ -19,22 +19,25 @@ public abstract class EinkommensteuerHelfer {
      * @return Die Steuer in Abhängigkeit den übergebenen Wertes
      */
     public static int berechneEinkommensteuer(int wert) {
-        int steuer = 0;
-        if (wert > ONEHUNDREDTWENTYTHOUSAND) {
-            steuer += ((wert - ONEHUNDREDTWENTYTHOUSAND) / HUNDRED) * FIFTY;
-            wert -= (wert - ONEHUNDREDTWENTYTHOUSAND);
+        if (wert <= 0) {
+            return 0;
+        } else {
+            int steuer = 0;
+            if (wert > ONEHUNDREDTWENTYTHOUSAND) {
+                steuer += ((wert - ONEHUNDREDTWENTYTHOUSAND) / HUNDRED) * FIFTY;
+                wert -= (wert - ONEHUNDREDTWENTYTHOUSAND);
+            }
+            if (wert > SIXTYTHOUSAND) {
+                steuer += ((wert - SIXTYTHOUSAND) / HUNDRED) * THIRTYFIVE;
+                wert -= (wert - SIXTYTHOUSAND);
+            }
+            if (wert > TWENTYTHOUSAND) {
+                steuer += (((wert - TWENTYTHOUSAND) / HUNDRED) * TWENTYFIVE);
+                wert -= (wert - TWENTYTHOUSAND);
+            }
+            steuer = steuer + (wert / HUNDRED) * TEN;
+            return steuer;
         }
-        if (wert > SIXTYTHOUSAND) {
-            steuer += ((wert - SIXTYTHOUSAND) / HUNDRED) * THIRTYFIVE;
-            wert -= (wert - SIXTYTHOUSAND);
-        }
-        if (wert > TWENTYTHOUSAND) {
-            steuer += (((wert - TWENTYTHOUSAND) / HUNDRED) * TWENTYFIVE);
-            wert -= (wert - TWENTYTHOUSAND);
-        }
-        steuer = steuer + (wert / HUNDRED) * TEN;
-        return steuer;
-
     }
 
 }
